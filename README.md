@@ -1,4 +1,4 @@
 geo-kadoh
 =========
 
-bla bla blah... I'll add later :O
+bla bla blah... I'll add later :-Ö
