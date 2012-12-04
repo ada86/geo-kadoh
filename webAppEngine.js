@@ -1,30 +1,3 @@
-var getKey = function(){
-    node.get('1111111111111111111111111111111111111110',
-        function (value){
-            var output="Couldn't fetch it :'(";
-            if (value != null) {output=value;}
-                ///Let's print the result
-            document.getElementById("output").innerHTML=output;
-        }                
-    );
-};
-
-var giveLocation = function() {
-    console.log("GEOLOCATING!");
-    if (navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(function(position) {
-                document.getElementById("output").innerHTML=position.coords.latitude;
-                node.put("1111111111111111111111111111111111111110", position.coords, -1, function (key, size){
-                        alert("The key is : " + String(key));
-                    });
-            }, function(error){
-                console.log(error);
-            }
-        );
-    }
-    else {console.log("NO GEOLOCATION")};
-    
-};
 function getnaddLocation() {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(shownputPosition, showError);
@@ -34,13 +7,18 @@ function getnaddLocation() {
 }
 
 function shownputPosition(position) {
+    /**
+    *  Puts a string containing the location of the client at the address SHA1(value of field myName)
+    **/
     var lat =position.coords.latitude;
     var lon =position.coords.longitude;
     var myName = document.getElementById("myName").value;
     document.getElementById("output").innerHTML="Getting your location and putting it to the dht...";
     var value = String(myName) + " is located at " + lat + " latitude, " + lon + " longitude";
     alert(value);
-    node.put(Sha1.hash(myName,false), value, -1, function(value, size){alert("Location added succesfully at '"+Sha1.hash(myName,false)+"'")});
+    node.put(Sha1.hash(myName,false), value, -1, function(value, size){
+        log("Location added succesfully at '"+Sha1.hash(myName,false)+"'");
+    });
     <!-- add here the getting of map -->
 }
 
@@ -55,35 +33,26 @@ function showError(error) {
         case error.TIMEOUT:
             document.getElementById("output").innerHTML="The request to get user location timed out."
             break;
-        case error.UKNOWN_ERROR:
+        case error.UNKNOWN_ERROR:
             document.getElementById("output").innerHTML="An unknown error has occured."
             break;
     }
 }
 
 function getFriendLocation(){
+    /**
+    *   When called, looks for the value stored at SHA1(the value of the field "friendName")
+    *   which is then printed using log()
+    **/
     var friend = document.getElementById("friendName").value;
-    alert("friend : "+friend+", Sha1 : "+Sha1.hash(friend, false));
+    log("Looking for friend : "+friend+", Sha1 : "+Sha1.hash(friend, false));
     node.get(Sha1.hash(friend, false),
         function (value){
-            alert(value);
+            log(value);
         }                
     );
 }
 
-var sayHi = function(b){
-    var key=null;
-    var value="Hello World !";
-
-    if (b){key="1111111111111111111111111111111111111110";}
-    else {key=prompt("Please input the value","Goodbye world :(");}
-
-    node.put(key, "Hello World !", -1, function (key, size){
-            alert("The key is : " + String(key));
-    });
-}
-
-var log = function() {
-    console.log("IMMALIVE");
-    //node.put("1111111111111111111111111111111111111110", "Hello World !");
+function log(txt){
+    document.getElementById("output").innerHTML=txt;
 }
