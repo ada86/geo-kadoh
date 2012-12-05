@@ -8,13 +8,14 @@ function getnaddLocation() {
 
 function shownputPosition(position) {
 	/**
-	*  Puts a string containing the location of the client at the address SHA1(value of field myName)
+	*  Puts a string containing the location of the user at the address SHA1(value of field myName)
 	**/
 	var lat =position.coords.latitude;
 	var lon =position.coords.longitude;
 	var myName = document.getElementById("myName").value;
-	document.getElementById("output").innerHTML="Getting your location and putting it to the dht...";
-	var value = String(myName) + " is located at " + lat + " latitude, " + lon + " longitude";
+	log("Getting your location and putting it to the dht...");
+	//var value = String(myName) + " is located at " + lat + " latitude, " + lon + " longitude";
+	var value = serializePos(position, myName);
 	alert(value);
 	node.put(Sha1.hash(myName,false), value, -1, function(value, size){
 		log("Location added succesfully at '"+Sha1.hash(myName,false)+"'");
@@ -48,7 +49,8 @@ function getFriendLocation(){
 	log("Looking for friend : "+friend+", Sha1 : "+Sha1.hash(friend, false));
 	node.get(Sha1.hash(friend, false),
 		function (value){
-			log(value);
+			log(JSON.parse(value).username);
+			//log("String(value) + " is located at " + lat + " latitude, " + lon + " longitude";");
 		}				 
 	);
 }
@@ -61,6 +63,16 @@ function log(txt){
 
 //Test functions
 
-function pushJSONedDate(){
-	 
+function serializePos(position, usrName){
+	var objx = {username:usrName,timestamp:position.timestamp,coords:{latitude:position.coords.latitude,longitude:position.coords.longitude,accuracy:position.coords.accuracy,speed:position.coords.speed}}; 
+	return JSON.stringify(objx);
+}
+
+
+function pushJSONedPos(){
+		navigator.geolocation.getCurrentPosition(function (position){
+				console.log("Result of position : " + (serializePos(position)));
+				console.log("Result of stringify : " + JSON.stringify(serializePos(position)));
+			},
+			showError);
 }
