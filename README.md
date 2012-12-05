@@ -4,5 +4,6 @@ Web application using KadOH to provide location sharing functionalities on a Kad
 
 
 webAppEngine.js : main thread
+
 utils/
 	crypto.js : provides SHA1 hash
