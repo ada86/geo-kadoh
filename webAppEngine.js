@@ -15,7 +15,8 @@ function shownputPosition(position) {
 	var myName = document.getElementById("myName").value;
 	log("Getting your location and putting it to the dht...");
 	//var value = String(myName) + " is located at " + lat + " latitude, " + lon + " longitude";
-	var value = serializePos(position, myName);
+	position.username = myName;
+	var value = serializePos(position);
 	alert(value);
 	node.put(Sha1.hash(myName,false), value, -1, function(value, size){
 		log("Location added succesfully at '"+Sha1.hash(myName,false)+"'");
@@ -49,7 +50,9 @@ function getFriendLocation(){
 	log("Looking for friend : "+friend+", Sha1 : "+Sha1.hash(friend, false));
 	node.get(Sha1.hash(friend, false),
 		function (value){
-			log(JSON.parse(value).username);
+			var position = JSON.parse(value);
+			log(position.username + " is at : " + position.coords.latitude + ", " + position.coords.longitude);
+			
 			//log("String(value) + " is located at " + lat + " latitude, " + lon + " longitude";");
 		}				 
 	);
@@ -59,20 +62,30 @@ function log(txt){
 	document.getElementById("output").innerHTML=txt;
 }
 
-
-
-//Test functions
-
-function serializePos(position, usrName){
-	var objx = {username:usrName,timestamp:position.timestamp,coords:{latitude:position.coords.latitude,longitude:position.coords.longitude,accuracy:position.coords.accuracy,speed:position.coords.speed}}; 
+function serializePos(position){
+	/**
+	*	This function transforms a position object to a String, that can be deserialized back to an object similar to the original one.
+	**/
+	var objx = {username:position.username,
+		timestamp:position.timestamp,
+		coords:{
+			latitude:position.coords.latitude,
+			longitude:position.coords.longitude,
+			accuracy:position.coords.accuracy,
+			speed:position.coords.speed
+		}
+	}; 
 	return JSON.stringify(objx);
 }
 
+//Test functions
 
 function pushJSONedPos(){
+		var key = cryptico.generateRSAKey("helloworld",1024);
 		navigator.geolocation.getCurrentPosition(function (position){
 				console.log("Result of position : " + (serializePos(position)));
 				console.log("Result of stringify : " + JSON.stringify(serializePos(position)));
+				console.log("Result of stringify + RSA : " + JSON.stringify(serializePos(position)));
 			},
 			showError);
 }
