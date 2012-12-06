@@ -1,12 +1,53 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bootstrap 101 Template</title>
+  	<meta charset="UTF-8">
+	<title>Hi5 - The decentralized location sharing Web application</title>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="KadOH.js?debug=true"></script>
+	<script type="text/javascript" src="webAppEngine.js"></script>
+	<script type="text/javascript" src="utils/sha1.js"></script>
+	<script type="text/javascript" src="utils/cryptico.js"></script>
+	<script type="text/javascript">
+		var config = {
+			bootstraps: ["127.0.0.1:3000", "127.0.0.1:3001", "127.0.0.1:3002"],
+			reactor: {
+				protocol: 'jsonrpc2',
+				type: 'SimUDP',
+				transport: {
+				transports: ['xhr-polling']
+					}
+				}
+			};
+		node = new KadOH.Node(undefined, config);
+		node.connect(function() {
+		console.log('connected');
+		node.join(function() {
+			console.log('joined');
+			var peers = node._routingTable.howManyPeers();
+			console.log('We got '+peers+' peers in routing table');
+			});
+		});
+	</script>
+    
   </head>
   <body>
-    <h1>Hello, world!</h1>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <h1>Welcome to Hi5</h1>
+    <div>
+		<label>Your name:</label>
+		<input id="myName" type=text />
+		<button onClick="getnaddLocation()">Give my location to the cloud</button> 
+	</div>
+	<div>
+		<label>Get friend:</label>
+		<input id="friendName" type=text />
+		<button onClick="getFriendLocation()">Give me the location</button> 
+	</div>
+	<p id="output">I don't have any value :(</p>
+	<p></p>
+	<p>test zone</p>
+	<button onClick="pushJSONedPos()">Try JSON</button>
   </body>
 </html>
