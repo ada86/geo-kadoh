@@ -82,10 +82,12 @@ function serializePos(position){
 
 function pushJSONedPos(){
 		var key = cryptico.generateRSAKey("helloworld",1024);
+		var stat, cipher;
 		navigator.geolocation.getCurrentPosition(function (position){
-				console.log("Result of position : " + (serializePos(position)));
+				console.log("RSA key.n : " + key.n);
 				console.log("Result of stringify : " + JSON.stringify(serializePos(position)));
-				console.log("Result of stringify + RSA : " + JSON.stringify(serializePos(position)));
+				stat, cipher = cryptico.encrypt(JSON.stringify(serializePos(position)), key);
+				console.log("Result of stringify + RSA : " + cipher +"........."+stat);
 			},
 			showError);
 }
