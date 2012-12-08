@@ -37,13 +37,13 @@
     <h1>Welcome to Hi5</h1>
     <div>
 		<label>Your name:</label>
-		<input id="myName" type=text />
-		<button onClick="getnaddLocation()">Give my location to the cloud</button> 
+		<input id="myName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetnaddLocation').click()"/>
+		<button id="btnGetnaddLocation" onClick="getnaddLocation()">Give my location to the cloud</button> 
 	</div>
 	<div>
 		<label>Get friend:</label>
-		<input id="friendName" type=text />
-		<button onClick="getFriendLocation()">Give me the location</button> 
+		<input id="friendName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()"/>
+		<button id="btnGetFriendLocation" onClick="getFriendLocation()">Give me the location</button> 
 	</div>
 	<p id="output">I don't have any value :(</p>
 	<p></p>
