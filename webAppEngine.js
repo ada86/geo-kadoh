@@ -50,10 +50,12 @@ function getFriendLocation(){
 	log("Looking for friend : "+friend+", Sha1 : "+Sha1.hash(friend, false));
 	node.get(Sha1.hash(friend, false),
 		function (value){
-			var position = JSON.parse(value);
-			log(position.username + " is at : " + position.coords.latitude + ", " + position.coords.longitude);
-			
-			//log("String(value) + " is located at " + lat + " latitude, " + lon + " longitude";");
+			if (value != null){
+				var position = JSON.parse(value);
+				log(position.username + " is at : " + position.coords.latitude + ", " + position.coords.longitude);
+			}else{
+				log(friend+"'s location was not found on the DHT");
+			}
 		}				 
 	);
 }
