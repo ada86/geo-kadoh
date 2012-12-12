@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+	<title>Hi5 - The decentralized location sharing Web application</title>
+	<!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+	<script type="text/javascript" src="utils/jquery.js"></script>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+	<script src="bootstrap/js/bootstrap.js"></script>
+
+	<script type="text/javascript" src="KadOH.js?debug=true"></script>
+	<script type="text/javascript" src="objects/locationUpdater.js"></script>
+	<script type="text/javascript" src="objects/config.js"></script>
+	<script type="text/javascript" src="objects/checkIn.js"></script>
+	<script type="text/javascript" src="utils/sha1.js"></script>
+	<script type="text/javascript" src="utils/cryptico.js"></script>
+
+	<script type="text/javascript">
+		var kadohConfig = {
+			bootstraps: ["127.0.0.1:3000", "127.0.0.1:3001", "127.0.0.1:3002"],
+			reactor: {
+				protocol: 'jsonrpc2',
+				type: 'SimUDP',
+				transport: {
+				transports: ['xhr-polling']
+					}
+				}
+			};
+		node = new KadOH.Node(undefined, kadohConfig);
+		node.connect(function() {
+		console.log('connected');
+		node.join(function() {
+			console.log('joined');
+			var peers = node._routingTable.howManyPeers();
+			console.log('We got '+peers+' peers in routing table');
+			});
+		});
+
+		function log(txt){
+			alert(txt);
+		}
+	</script>
+    
+  </head>
+  <body>
+    <h1>Welcome to Hi5</h1>
+    <div>
+		<label>Your name:</label>
+		<input id="myName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetnaddLocation').click()"/>
+		<button id="btnGetnaddLocation" onClick="checkIn.putMyLocation()">Give my location to the cloud</button> 
+	</div>
+	<div>
+		<label>Get friend:</label>
+		<input id="friendName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()"/>
+		<button id="btnGetFriendLocation" onClick="locationUpdater.getFriendLocation({name:'lorenzo'})">Give me the location of lorenzo</button> 
+	</div>
+	<p id="output">I don't have any value :(</p>
+	<p></p>
+	<p>test zone</p>
+	<button onClick="pushJSONedPos()">Try JSON</button>
+	<button onClick="locationUpdater.putLocation()"> Try locationUpdater</button>
+	
+	<script type="text/javascript">
+		function log(txt){
+			document.getElementById("output").innerHTML=txt;
+		}
+	</script>
+  </body>
+</html>
