@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  	<meta charset="UTF-8">
+<head>
+	<meta charset="UTF-8">
 	<title>Hi5 - The decentralized location sharing Web application</title>
 	<!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
 	<script type="text/javascript" src="utils/jquery.js"></script>
@@ -40,11 +40,10 @@
 			alert(txt);
 		}
 	</script>
-    
-  </head>
-  <body>
-    <h1>Welcome to Hi5</h1>
-    <div>
+</head>
+<body>
+	<h1>Welcome to Hi5</h1>
+	<div>
 		<label>Your name:</label>
 		<input id="myName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetnaddLocation').click()"/>
 		<button id="btnGetnaddLocation" onClick="checkIn.putMyLocation()">Give my location to the cloud</button> 
@@ -65,5 +64,5 @@
 			document.getElementById("output").innerHTML=txt;
 		}
 	</script>
-  </body>
+</body>
 </html>
