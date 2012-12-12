@@ -21,7 +21,7 @@ function shownputPosition(position) {
 	node.put(Sha1.hash(myName,false), value, -1, function(value, size){
 		log("Location added succesfully at '"+Sha1.hash(myName,false)+"'");
 	});
-	<!-- add here the getting of map -->
+	//TODO:add here the getting of map
 }
 
 function showError(error) {
@@ -60,9 +60,6 @@ function getFriendLocation(){
 	);
 }
 
-function log(txt){
-	document.getElementById("output").innerHTML=txt;
-}
 
 function serializePos(position){
 	/**
