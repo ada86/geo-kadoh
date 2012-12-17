@@ -9,9 +9,10 @@
 	<script src="bootstrap/js/bootstrap.js"></script>
 
 	<script type="text/javascript" src="KadOH.js?debug=true"></script>
-	<script type="text/javascript" src="objects/locationUpdater.js"></script>
-	<script type="text/javascript" src="objects/config.js"></script>
-	<script type="text/javascript" src="objects/checkIn.js"></script>
+	<script type="text/javascript" src="lib/locationUpdater.js"></script>
+	<script type="text/javascript" src="lib/config.js"></script>
+	<script type="text/javascript" src="lib/configManager.js"></script>
+	<script type="text/javascript" src="lib/checkIn.js"></script>
 	<script type="text/javascript" src="utils/sha1.js"></script>
 	<script type="text/javascript" src="utils/cryptico.js"></script>
 
@@ -33,6 +34,7 @@
 			console.log('joined');
 			var peers = node._routingTable.howManyPeers();
 			console.log('We got '+peers+' peers in routing table');
+			log("Connection to the DHT succesful");
 			});
 		});
 
@@ -51,13 +53,10 @@
 	<div>
 		<label>Get friend:</label>
 		<input id="friendName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()"/>
-		<button id="btnGetFriendLocation" onClick="locationUpdater.getFriendLocation({name:'lorenzo'})">Give me the location of lorenzo</button> 
+		<button id="btnGetFriendLocation" onClick="locationUpdater.getFriendLocation({name:document.getElementById('friendName').value})">Give me the location of a friend</button> 
 	</div>
 	<p id="output">I don't have any value :(</p>
 	<p></p>
-	<p>test zone</p>
-	<button onClick="pushJSONedPos()">Try JSON</button>
-	<button onClick="locationUpdater.putLocation()"> Try locationUpdater</button>
 	
 	<script type="text/javascript">
 		function log(txt){
