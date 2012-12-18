@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Hi5 - The decentralized location sharing Web application</title>
+	
 	<!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
 	<script type="text/javascript" src="utils/jquery.js"></script>
 	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
@@ -44,24 +45,54 @@
 	</script>
 </head>
 <body>
-	<h1>Welcome to Hi5</h1>
-	<div>
-		<label>Your name:</label>
-		<input id="myName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetnaddLocation').click()"/>
-		<button id="btnGetnaddLocation" onClick="checkIn.putMyLocation()">Give my location to the cloud</button> 
-	</div>
-	<div>
-		<label>Get friend:</label>
-		<input id="friendName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()"/>
-		<button id="btnGetFriendLocation" onClick="locationUpdater.getFriendLocation({name:document.getElementById('friendName').value})">Give me the location of a friend</button> 
-	</div>
-	<p id="output">I don't have any value :(</p>
-	<p></p>
-	
-	<script type="text/javascript">
-		function log(txt){
-			document.getElementById("output").innerHTML=txt;
-		}
-	</script>
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a href="#" class="brand">Hi5! Geo-KadOH</a>
+        <ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="https://github.com/ada86/geo-kadoh">Source</a></li>
+          <li><a href="https://github.com/ada86/geo-kadoh/blob/master/README.md">Documentation</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    
+	<div class="hero-unit">
+        <h1>Welcome to Hi5</h1>
+        <p>Here comes the introduction text for geo-kadoh/hi5</p>
+    </div>
+    <div class="row">
+        <div class="span4">
+          <h2>Check in</h2>
+          <label>Your name:</label>
+		  <input id="myName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetnaddLocation').click()"/>
+		  <button id="btnGetnaddLocation" onClick="checkIn.putMyLocation()">Give my location to the cloud</button> 
+        </div>
+        <div class="span4">
+          <h2>Find friend</h2>
+          <label>Get friend:</label>
+		  <input id="friendName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()"/>
+		  <button id="btnGetFriendLocation" onClick="locationUpdater.getFriendLocation({name:document.getElementById('friendName').value})">Give me the location of a friend</button> 
+        </div>
+        <div class="span4">
+          <h2>Output</h2>
+          <p></p>
+          <p id="output">I don't have any value :(</p>
+		</div>
+		<script type="text/javascript">
+			function log(txt){
+				document.getElementById("output").innerHTML=txt;
+			}
+		</script>
+    </div>
+	<hr>
+    <footer>
+      <p><strong>Abdalla Taha</strong> and <strong>Lorenzo Rand</strong></p>
+    </footer>
+  
 </body>
 </html>
