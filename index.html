@@ -67,9 +67,13 @@
     </div>
     <div class="row">
         <div class="span4">
+          <h2>Log in</h2>
+          <label>Please enter your username</label>
+		  <input id="myName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('logIn').click()"/>
+		  <button id="logIn" onClick="configManager.logIn(document.getElementById('myName').value, prompt('Enter your password', ''))">Log in</button> 
+        </div>
+        <div class="span4">
           <h2>Check in</h2>
-          <label>Your name:</label>
-		  <input id="myName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetnaddLocation').click()"/>
 		  <button id="btnGetnaddLocation" onClick="checkIn.putMyLocation()">Give my location to the cloud</button> 
         </div>
         <div class="span4">
