@@ -9,6 +9,11 @@ webAppEngine.js : main thread
 
 utils/
 
-	sha1.js : provides SHA1 hash
+cryptico.js : RSA
 
-	cryptico.js : provides RSA functionalities such as key generation, encryption/decryption and signature
+jquery.js
+
+sha1.js : SHA1
+
+sjcl.js : Stanford Javascript Crypto Library (AES, SHA256)
+
