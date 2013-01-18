@@ -40,9 +40,7 @@
 			});
 		});
 
-		function log(txt){
-			alert(txt);
-		}
+		
 	</script>
 </head>
 <body>
@@ -87,13 +85,16 @@
           <h2>Output</h2>
           <p></p>
           <p id="output">I don't have any value :(</p>
-		</div>
+	</div>
+</div>
 		<script type="text/javascript">
+			var text = "";
 			function log(txt){
-				document.getElementById("output").innerHTML=txt;
+				text = txt+"<br>".concat(text);
+				document.getElementById("output").innerHTML=text;
 			}
 		</script>
-    </div>
+
 	<hr>
     <footer>
       <p><strong>Abdalla Taha</strong> and <strong>Lorenzo Rand</strong></p>
