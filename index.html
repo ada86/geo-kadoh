@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Hi5 - The decentralized location sharing Web application</title>
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
 	<script type="text/javascript" src="utils/jquery.js"></script>
-	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
 	<script src="bootstrap/js/bootstrap.js"></script>
-
+	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script type="text/javascript" src="KadOH.js?debug=true"></script>
 	<script type="text/javascript" src="lib/locationUpdater.js"></script>
 	<script type="text/javascript" src="lib/config.js"></script>
@@ -17,7 +15,6 @@
 	<script type="text/javascript" src="utils/sha1.js"></script>
 	<script type="text/javascript" src="utils/cryptico.js"></script>
 	<script type="text/javascript" src="utils/sjcl.js"></script>
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 
 	<script type="text/javascript">
 		var kadohConfig = {
@@ -43,65 +40,161 @@
 
 		
 	</script>
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+	<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+	<title>Hi5! Geo-KadOH</title>
 </head>
 <body>
-
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a href="#" class="brand">Hi5! Geo-KadOH</a>
-        <ul class="nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="https://github.com/ada86/geo-kadoh">Source</a></li>
-          <li><a href="https://github.com/ada86/geo-kadoh/blob/master/README.md">Documentation</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-<div class="container">
-    
-	<div class="hero-unit">
-        <h1>Welcome to Hi5</h1>
-        <p>Here comes the introduction text for geo-kadoh/hi5</p>
-    </div>
-    <div class="row">
-        <div class="span4">
-          <h2>Log in</h2>
-          <label>Please enter your username</label>
-		  <input id="myName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('logIn').click()"/>
-		  <button id="logIn" onClick="configManager.logIn(document.getElementById('myName').value, prompt('Enter your password', ''))">Log in</button> 
-        </div>
-        <div class="span4">
-          <h2>Check in</h2>
-		  <button id="btnGetnaddLocation" onClick="checkIn.putMyLocation()">Give my location to the cloud</button> 
-        </div>
-        <div class="span4">
-          <h2>Find friend</h2>
-          <label>Get friend:</label>
-		  <input id="friendName" type=text onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()"/>
-		  <button id="btnGetFriendLocation" onClick="locationUpdater.getFriendLocation({name:document.getElementById('friendName').value})">Give me the location of a friend</button> 
-        </div>
-        <div class="span4">
-          <h2>Output</h2>
-          <p></p>
-          <p id="output">I don't have any value :(</p>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<a href="#" class="brand">Hi5! Geo-KadOH</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class=""><a href="#Login" data-toggle="modal"> Log in</a></li>
+						<li class="active"><a href="#">Home</a></li>
+						<li class=""><a href="guide.html">Quick Guide</a></li>
+						<li><a href="https://github.com/ada86/geo-kadoh">Source</a></li>
+						<li><a href="https://github.com/ada86/geo-kadoh/blob/master/README.md">Documentation</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
-
-	<div id="mapholder"></div>
-</div>
-		<script type="text/javascript">
-			var text = "";
-			function log(txt){
-				text = txt+"<br>".concat(text);
-				document.getElementById("output").innerHTML=text;
-			}
-		</script>
-
+	<div id="Login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">Log in</h3>
+		</div>
+		<div class="modal-body">
+			<input type="text" id="myName" class="input-block-level" placeholder="Username">
+			<input type="password" id="password" class="input-block-level" placeholder="Password">
+			<label class="checkbox">
+				<input type="checkbox" value="remember-me">Remember my configuration on this machine</input>
+			</label>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-large btn-primary" data-dismiss="modal" aria-hidden="true" onClick="configManager.logIn(document.getElementById('myName').value, document.getElementById('password').value)">Log in</button>
+		</div>
+	</div>
+	<div class="container pagination-centered">
+		<div class="hero-unit hidden-phone visible-desktop">
+			<h1>Welcome to Hi5! Geo-KadOH<img height="133" width="135"src="bootstrap/img/Hi5_Geo-KadOH_logo.png"></h1>
+			<p>The decentralized location sharing Web application</p>
+		</div>
+		<div class="page-header visible-phone hidden-desktop">
+			<h1><img height="80" width="83"src="bootstrap/img/Hi5_Geo-KadOH_logo.png"><br>Welcome to Hi5! Geo-KadOH<small>The decentralized location sharing Web application</small></h1>
+		</div>
+		<div class="row">
+			<div id="mapholder"></div>
+		</div>
+		<div class="row">
+			<div class="span4">
+				<h2>Output</h2>
+				<br>
+				<pre class="pre pre-scrollable" id="output">I don't have any value :(</pre><br>
+			</div>
+			<div class="span4">
+				<h2>Check in</h2>
+				<br>
+				<div class="btn-group">
+					<button class="btn btn-success" id="btnGetnaddLocation" onClick="checkIn.putMyLocation()"><i class="icon-ok-circle icon-white"></i> Share my location</button>
+					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+						<span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu" align="left">
+						<!--We need here dynamicality TODO:JAVASCRIPT-->
+						<li align="center">Only to group</li>
+						<li><a href="#"><i class="icon-th-list"></i> Close friends</a></li>
+						<li><a href="#"><i class="icon-th-list"></i> Work mates</a></li>
+						<li><a href="#"><i class="icon-th-list"></i> Relatives</a></li>
+					</ul>
+				</div>
+				<br><br><br>
+			</div>
+			<div class="span4">
+				<h2>Find friend</h2><br>
+				<!--Tabbable example-->
+				<div class="input-append">
+					<input id="friendName" type="text" placeholder="Type friends username" onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()"/>
+					<div class="btn-group">
+						<button class="btn btn-primary" id="btnGetFriendLocation" onClick="locationUpdater.getFriendLocation({name:document.getElementById('friendName').value})"><i class="icon-search icon-white"></i> Find</button>
+						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" align="left">
+							<!--We need here dynamicality-->
+							<li><a href="#"><i class="icon-user"></i> Tudor</a></li>
+							<li><a href="#"><i class="icon-user"></i> Abdalla</a></li>
+							<li><a href="#"><i class="icon-user"></i> Lorenzo</a></li>
+							<li><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
+						</ul>
+					</div>
+				</div><br>
+				<h2>Find group</h2>
+				<!--Tabbable example-->
+				<div class="input-append">
+					<input id="groupName" type="text" placeholder="Type group name" onkeydown="if (event.keyCode == 13) document.getElementById('btnGetGroupLocation').click()"/>
+					<div class="btn-group">
+						<button class="btn btn-primary" id="btnGetGroupLocation" onClick="locationUpdater.getGroupLocation({name:document.getElementById('groupName').value})"><i class="icon-search icon-white"></i> Find</button>
+						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" align="left">
+							<!--We need here dynamicality-->
+							<li><a href="#"><i class="icon-th-list"></i> Close friends</a></li>
+							<li><a href="#"><i class="icon-th-list"></i> Work mates</a></li>
+							<li><a href="#"><i class="icon-th-list"></i> Relatives</a></li>
+							<li><a href="#editGroups"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
+						</ul>
+					</div>
+				</div><br>
+			</div>
+		</div>
+	</div>
+	<div id="editGroups" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">Edit Group list</h3>
+		</div>
+		<div class="modal-body">
+			<p>Here the list...</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button class="btn btn-primary">Save changes</button>
+		</div>
+	</div>
+	<div id="editFriends" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">Edit friend list</h3>
+		</div>
+		<div class="modal-body">
+			<p>Here the list...</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button class="btn btn-primary">Save changes</button>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var text = "";
+		function log(txt){
+			text = txt+"<br>".concat(text);
+			document.getElementById("output").innerHTML=text;
+		}
+	</script>
 	<hr>
-    <footer>
-      <p><strong>Abdalla Taha</strong> and <strong>Lorenzo Rand</strong></p>
-    </footer>
-  
+	<div id="footer">
+		<div class="container">
+			<p class="muted credit"><strong>Abdalla Taha</strong> and <strong>Lorenzo Rand</strong></p>
+		</div>
+	</div>  
 </body>
 </html>
