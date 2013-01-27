@@ -122,7 +122,7 @@
 				<div class="input-append">
 					<input id="friendName" type="text" placeholder="Type friends username" onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()"/>
 					<div class="btn-group">
-						<button class="btn btn-primary" id="btnGetFriendLocation" onClick="locationUpdater.getFriendLocation({name:document.getElementById('friendName').value})"><i class="icon-search icon-white"></i> Find</button>
+						<button class="btn btn-primary" id="btnGetFriendLocation" onClick="checkIn.getFriendLocation()"><i class="icon-search icon-white"></i> Find</button>
 						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 							<span class="caret"></span>
 						</button>
