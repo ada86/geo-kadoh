@@ -37,7 +37,11 @@
 			});
 		});
 
-		
+		var text = "";
+		function log(txt){
+			text = txt+"<br>".concat(text);
+			document.getElementById("output").innerHTML=text;
+		}
 	</script>
 	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
 	<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
@@ -45,6 +49,9 @@
 	
 </head>
 <body>
+
+	<!--Navigation bar **************************************** -->
+
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container-fluid">
@@ -61,12 +68,15 @@
 						<li><a href="https://github.com/ada86/geo-kadoh">Source</a></li>
 						<li><a href="https://github.com/ada86/geo-kadoh/blob/master/README.md">Documentation</a></li>
 						<li><a href="#Guide" data-toggle="modal">Guide</a></li>
-						<li><button class="btn btn-primary" href="#Login" data-toggle="modal"> Log in</button></li>
+						<li><button class="btn btn-success" href="#Login" data-toggle="modal"> Log in</button></li>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
+	
+	<!--Modals ************************************************ -->
+		<!--Login-->
 	<div id="Login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -83,25 +93,60 @@
 			<button class="btn btn-large btn-primary" data-dismiss="modal" aria-hidden="true" onClick="configManager.logIn()">Log in</button>
 		</div>
 	</div>
+		<!--Guide-->
+		<!--Edit Friend-->
+	<div id="editFriends" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">Edit friend list</h3>
+		</div>
+		<div class="modal-body">
+			<p>Here the list...</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button class="btn btn-primary">Save changes</button>
+		</div>
+	</div>
+		<!--Edit Group-->
+	<div id="editGroups" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">Edit Group list</h3>
+		</div>
+		<div class="modal-body">
+			<p>Here the list...</p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button class="btn btn-primary">Save changes</button>
+		</div>
+	</div>
+	
+	<!--Main body ********************************************* -->
 	<div class="container pagination-centered">
+		<!--Topic desktop-->
 		<div class="hero-unit hidden-phone visible-desktop">
 			<h1>Welcome to Hi5! Geo-KadOH<img height="133" width="135"src="bootstrap/img/Hi5_Geo-KadOH_logo.png"></h1>
 			<p>The decentralized location sharing Web application</p>
 		</div>
+		<!--Topic mobile-->
 		<div class="page-header visible-phone hidden-desktop">
 			<h1><img height="80" width="83"src="bootstrap/img/Hi5_Geo-KadOH_logo.png"><br>Welcome to Hi5! Geo-KadOH<small>The decentralized location sharing Web application</small><p id="loggedin"></p></h1>
 			<button class="btn btn-success" href="#Login"  data-toggle="modal"> Log in</button>
 		</div>
+		<!--Map-->
 		<div class="row-fluid collapse in">
 			<div class="span10 offset1" id="mapholder"></div>
 		</div>
 		<div class="row">
 			<div class="span4">
+		<!--Check in-->
 				<h2>Check in</h2>
 				<br>
 				<div class="btn-group">
-					<button class="btn btn-success" id="btnGetnaddLocation" onClick="checkIn.putMyLocation()"><i class="icon-ok-circle icon-white"></i> Share my location</button>
-					<button class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+					<button class="btn btn-primary" id="btnGetnaddLocation" onClick="checkIn.putMyLocation()"><i class="icon-ok-circle icon-white"></i> Share my location</button>
+					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" align="left">
@@ -115,8 +160,8 @@
 				<br><br><br>
 			</div>
 			<div class="span4">
+		<!--Find Friends and Group-->
 				<h2>Find friend</h2><br>
-				<!--Tabbable example-->
 				<div class="input-append">
 					<input id="friendName" type="text" placeholder="Type friends username" onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()"/>
 					<div class="btn-group">
@@ -149,6 +194,7 @@
 				</div>
 				<br><br>
 			</div>
+		<!--Output-->
 			<div class="span4">
 				<h2>Output</h2>
 				<br>
@@ -156,39 +202,6 @@
 			</div>
 		</div>
 	</div>
-	<div id="editGroups" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Edit Group list</h3>
-		</div>
-		<div class="modal-body">
-			<p>Here the list...</p>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-			<button class="btn btn-primary">Save changes</button>
-		</div>
-	</div>
-	<div id="editFriends" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Edit friend list</h3>
-		</div>
-		<div class="modal-body">
-			<p>Here the list...</p>
-		</div>
-		<div class="modal-footer">
-			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-			<button class="btn btn-primary">Save changes</button>
-		</div>
-	</div>
-	<script type="text/javascript">
-		var text = "";
-		function log(txt){
-			text = txt+"<br>".concat(text);
-			document.getElementById("output").innerHTML=text;
-		}
-	</script>
 	<hr>
 	<div id="footer">
 		<div class="container">
