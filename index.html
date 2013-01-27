@@ -9,6 +9,7 @@
 	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type="text/javascript" src="lib/locationUpdater.js"></script>
 	<script type="text/javascript" src="lib/configManager.js"></script>
+	<script type="text/javascript" src="lib/listManager.js"></script>
 	<script type="text/javascript" src="lib/checkIn.js"></script>
 	<script type="text/javascript" src="utils/sha1.js"></script>
 	<script type="text/javascript" src="utils/cryptico.js"></script>
@@ -175,7 +176,7 @@
 					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 						<span class="caret"></span>
 					</button>
-					<ul class="dropdown-menu" align="left">
+					<ul class="dropdown-menu" align="left" id="groupMenu">
 						<!--We need here dynamicality TODO:JAVASCRIPT-->
 						<li align="center">Only to group</li>
 						<li><a href="#"><i class="icon-th-list"></i> Close friends</a></li>
@@ -195,7 +196,7 @@
 						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 							<span class="caret"></span>
 						</button>
-						<ul class="dropdown-menu" align="left">
+						<ul class="dropdown-menu" align="left" id="friendMenu">
 							<!--We need here dynamicality-->
 							<li><a href="#"><i class="icon-user"></i> Tudor</a></li>
 							<li><a href="#"><i class="icon-user"></i> Abdalla</a></li>
@@ -232,7 +233,7 @@
 		<!--Footer-->
 	<div id="footer">
 		<div class="container">
-			<p class="muted credit"><strong>Abdalla Taha</strong> and <strong>Lorenzo Rand</strong></p>
+			<p class="muted credit"><strong>Abdalla Taha</strong> and <strong>Lorenzo Rand&eacute</strong></p>
 		</div>
 	</div>  
 </body>

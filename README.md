@@ -1,19 +1,14 @@
 geo-kadoh
 =========
-Web application using KadOH to provide location sharing functionalities on a Kademlia DHT.
-This application is currently used as a replacement for github.com/jinroh/kadoh//apps/boilerplate/static .
+Web application using [KadOH](https://github.com/jinroh/kadoh) to provide location sharing functionalities on a Kademlia DHT.
+This application is currently used as a replacement for [KadOH's boilerplate jake app](https://github.com/jinroh/kadoh/tree/master/apps/boilerplate/static) .
 
-index.html : webpage hosting our javascript
+bootstrap : to make it nice and shiny
 
-webAppEngine.js : main thread
+lib : 
 
-utils/
++ checkIn : handles geolocation, location retrieval/storage on the DHT
++ configManager : handles user's profile and friend/group list
++ listManager : prints the dropdown menu lists
 
-cryptico.js : RSA
-
-jquery.js
-
-sha1.js : SHA1
-
-sjcl.js : Stanford Javascript Crypto Library (AES, SHA256)
-
+utils : various libraries
