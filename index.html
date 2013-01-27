@@ -65,10 +65,11 @@
 					<p class="navbar-text pull-right" id="loggedin">
 					</p>
 					<ul class="nav">
+						<li><button class="btn btn-success" href="#Login" data-toggle="modal"> Log in</button></li>
+						<li><a href="#Guide" data-toggle="modal">Guide</a></li>
+						<li class="divider-vertical"></li>
 						<li><a href="https://github.com/ada86/geo-kadoh">Source</a></li>
 						<li><a href="https://github.com/ada86/geo-kadoh/blob/master/README.md">Documentation</a></li>
-						<li><a href="#Guide" data-toggle="modal">Guide</a></li>
-						<li><button class="btn btn-success" href="#Login" data-toggle="modal"> Log in</button></li>
 					</ul>
 				</div>
 			</div>
@@ -94,6 +95,31 @@
 		</div>
 	</div>
 		<!--Guide-->
+	<div id="Guide" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">Guide for using Hi5! Geo-KadOH</h3>
+		</div>
+		<div class="modal-body pagination-centered">
+			<img height="80" width="83" src="bootstrap/img/Hi5_Geo-KadOH_logo.png">
+			<p class="lead">Hi5! Geo-KadOH is a decentralized solution for location sharing. You can easily create an account and start sharing your location with your friends.</p>
+			<h4>About log in</h4>
+			<p>If you don't have an account just type any username and password, and the system will create for you an account.</p>
+			<h4>Output box</h4>
+			<p>This box tells you in what state the website is. It also gives you responses on whether thigs go well or not.</p>
+			<h4>Locating yourself</h4>
+			<p>To locate yourself and share it to your friends just push the Share my location button. Your browser may ask you to allow location sharing which is required for this functionality. Succesfully shared location will be announced in the output box and your location will shown in the map. If you wish to share only with your group members then click on the small arrow and select the group you want to share with.</p>
+			<h4>Finding friends and groups</h4>
+			<p>Just type your friends username and we'll see if he has shared his location. There is a list of your saved friends behind the arrow. You can modify the list with edit button. After you have selected a friend we'll show you in the output box if the friends location was found. The friend will be then shown in the map. There is also a possibility</p>
+			<h4>Requirement</h4>
+			<p>You can use both desktop and mobile devices to use Hi5! Geo-KadOH. Only requirement is that the browser or the device should support HTML5.</p>
+			<h4>Contact us</h4>
+			<p>If you have some feedback on the webpage, we'll be happy to hear it. Just <a href="">click here</a></p>
+		</div>
+		<div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+		</div>
+	</div>
 		<!--Edit Friend-->
 	<div id="editFriends" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-header">
@@ -203,6 +229,7 @@
 		</div>
 	</div>
 	<hr>
+		<!--Footer-->
 	<div id="footer">
 		<div class="container">
 			<p class="muted credit"><strong>Abdalla Taha</strong> and <strong>Lorenzo Rand</strong></p>
