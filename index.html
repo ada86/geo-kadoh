@@ -66,7 +66,7 @@
 		</div>
 		<form class="modal-form">
 			<div class="modal-body">
-				<input type="url" id="myName" class="input-block-level" placeholder="Username">
+				<input type="email" id="myName" class="input-block-level" placeholder="Username">
 				<input type="password" id="password" class="input-block-level" placeholder="Password">
 				<label class="checkbox">
 					<input type="checkbox" name="remember-me" id="remember-me">Remember my configuration on this machine</input>
@@ -109,12 +109,18 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3 id="myModalLabel">Edit friend list</h3>
 		</div>
-		<div class="modal-body">
-			<p>Here the list...</p>
+		<div class="modal-body" id="friendMenu2">
+			<p>List empty</p>
+			<hr>
+			<p>Add friend</p>
+			<form class="modal-form form-inline">
+				<input type="text" class="input-small" placeholder="Username" id="addFriendName">
+				<input type="password" class="input-small" placeholder="Key" id="addFriendKey">
+				<button class="btn" onClick="configManager.addFriend()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
+			</form>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-			<button class="btn btn-primary">Save changes</button>
 		</div>
 	</div>
 		<!--Edit Group-->
@@ -124,7 +130,7 @@
 			<h3 id="myModalLabel">Edit Group list</h3>
 		</div>
 		<div class="modal-body">
-			<p>Here the list...</p>
+			<p>List empty</p>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -162,11 +168,8 @@
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" align="left" id="groupMenu">
-						<!--We need here dynamicality TODO:JAVASCRIPT-->
 						<li align="center">Only to group</li>
-						<li><a href="#"><i class="icon-th-list"></i> Close friends</a></li>
-						<li><a href="#"><i class="icon-th-list"></i> Work mates</a></li>
-						<li><a href="#"><i class="icon-th-list"></i> Relatives</a></li>
+						<li>List empty</li>
 					</ul>
 				</div>
 				<br><br><br>
@@ -182,6 +185,7 @@
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" align="left" id="friendMenu">
+							<li>List empty</li>
 							<li><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
 						</ul>
 					</div>
@@ -192,11 +196,8 @@
 						Find Group
 						<span class="caret"></span>
 					</a>
-					<ul class="dropdown-menu" align="left">
-						<!--We need here dynamicality-->
-						<li><a onClick="checkIn.getGroupLocation()"><i class="icon-th-list"></i> Close friends</a></li>
-						<li><a onClick="checkIn.getGroupLocation()"><i class="icon-th-list"></i> Work mates</a></li>
-						<li><a onClick="checkIn.getGroupLocation()"><i class="icon-th-list"></i> Relatives</a></li>
+					<ul class="dropdown-menu" align="left" id="groupMenu2">
+						<li>List empty</li>
 						<li><a href="#editGroups"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
 					</ul>
 				</div>
