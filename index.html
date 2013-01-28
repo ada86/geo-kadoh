@@ -66,8 +66,8 @@
 		</div>
 		<form class="modal-form">
 			<div class="modal-body">
-				<input type="email" id="myName" class="input-block-level" placeholder="Username">
-				<input type="password" id="password" class="input-block-level" placeholder="Password">
+				<input type="text" id="myName" class="input-block-level" placeholder="Username"  required>
+				<input type="password" id="password" class="input-block-level" placeholder="Password"  required>
 				<label class="checkbox">
 					<input type="checkbox" name="remember-me" id="remember-me">Remember my configuration on this machine</input>
 				</label>
@@ -114,8 +114,8 @@
 			<hr>
 			<p>Add friend</p>
 			<form class="modal-form form-inline">
-				<input type="text" class="input-small" placeholder="Username" id="addFriendName">
-				<input type="password" class="input-small" placeholder="Key" id="addFriendKey">
+				<input type="text" class="input-small" placeholder="Username" id="addFriendName" required>
+				<input type="text" class="input-small" placeholder="Key" id="addFriendKey">
 				<button class="btn" onClick="configManager.addFriend()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
 			</form>
 		</div>
