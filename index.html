@@ -129,13 +129,14 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3 id="myModalLabel">Edit Group list</h3>
 		</div>
+		<!--Groupid can be anything, also groupname if it's better they just need to be in sync with above <ul> section-->
 		<div class="modal-body tabbable" id="#groupMenu3">
 			<ul class="nav nav-tabs">
 				<li class="active"><a href="#Group1" data-toggle="tab">Friends</a></li>
 				<li><a href="#Group2" data-toggle="tab">Work mates</a></li>
 				<li><a href="#Group3" data-toggle="tab">Family</a></li>
 			</ul>
-			<div class="tab-content"><!--Groupid can be anything, also groupname if it's better they just need to be in sync with above <ul> section-->
+			<div class="tab-content">
 				<div class="tab-pane active" id="Group1">
 					<li><p><i class="icon-user"></i> Lorenzo<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group1','Lorenzo');"><i class="icon-trash"></i></button></p></li>
 					<li><p><i class="icon-user"></i> Abdalla<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group1','Abdalla');"><i class="icon-trash"></i></button></p></li>
@@ -149,6 +150,22 @@
 					<li><p><i class="icon-user"></i> Dad<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group4','Dad');"><i class="icon-trash"></i></button></p></li>
 				</div>
 			</div>
+		</div>
+		<div class="modal-body">
+			<hr>
+			<h4>Add a new group</h4>
+			<form class="modal-form form-inline">
+				<input type="text" class="input-small" placeholder="Groupname" id="addGroupName" required>
+				<input type="text" class="input-small" placeholder="Key" id="addGroupKey">
+				<button class="btn" onClick="configManager.addGroup()"><i class="icon-th-list"></i><i class="icon-plus"></i>Add</button>
+			</form>
+			<hr>
+			<h4>Add a member to a group</h4><!--maybe put here a list of the friend list and group list so user can only add existing friends in existing group-->
+			<form class="modal-form form-inline">
+				<input type="text" class="input-small" placeholder="Groupname" id="addGroupName" required>
+				<input type="text" class="input-small" placeholder="Username" id="addGroupUser">
+				<button class="btn" onClick="configManager.addFriendGroup()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
+			</form>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
