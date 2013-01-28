@@ -198,11 +198,13 @@
 				<h2>Check in</h2>
 				<br>
 				<div class="btn-group">
-					<button class="btn btn-primary" id="btnGetnaddLocation" onClick="checkIn.putMyLocation()"><i class="icon-ok-circle icon-white"></i> Share my location</button>
+					<button class="btn btn-primary" id="btnGetnaddLocation" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> Share my location</button>
 					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" align="left" id="groupMenu">
+						<li><a role="button" onClick="checkIn.putMyLocation(true)"><i class="icon-globe"></i> Share my location publicly</a></li>
+						<li class="divider-horisontal"></li>
 						<li align="center" class="text-info">Only to group:</li>
 						<li align="center" class="text-error">List empty</li>
 						<!--here is a sample of an element in the list-->
