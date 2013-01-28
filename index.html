@@ -118,7 +118,7 @@
 			<div class="modal-form form-inline">
 				<input type="text" class="input-small" placeholder="Username" id="addFriendName" required>
 				<input type="text" class="input-small" placeholder="Key" id="addFriendKey">
-				<button class="btn" onClick="configManager.addFriend()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
+				<button class="btn" onClick="listManager.addFriend()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
 			</div>
 		</div>
 		<div class="modal-footer">
@@ -140,16 +140,16 @@
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane active" id="Group1">
-					<li><p><i class="icon-user"></i> Lorenzo<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group1','Lorenzo');"><i class="icon-trash"></i></button></p></li>
-					<li><p><i class="icon-user"></i> Abdalla<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group1','Abdalla');"><i class="icon-trash"></i></button></p></li>
+					<li><p><i class="icon-user"></i> Lorenzo<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group1','Lorenzo');"><i class="icon-trash"></i></button></p></li>
+					<li><p><i class="icon-user"></i> Abdalla<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group1','Abdalla');"><i class="icon-trash"></i></button></p></li>
 				</div>
 				<div class="tab-pane" id="Group2">
-					<li><p><i class="icon-user"></i> Tudor<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group2','Tudor');"><i class="icon-trash"></i></button></p></li>
-					<li><p><i class="icon-user"></i> Marc<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group2','Marc');"><i class="icon-trash"></i></button></p></li>
+					<li><p><i class="icon-user"></i> Tudor<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group2','Tudor');"><i class="icon-trash"></i></button></p></li>
+					<li><p><i class="icon-user"></i> Marc<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group2','Marc');"><i class="icon-trash"></i></button></p></li>
 				</div>
 				<div class="tab-pane" id="Group3">
-					<li><p><i class="icon-user"></i> Mom<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group3','Mom');"><i class="icon-trash"></i></button></p></li>
-					<li><p><i class="icon-user"></i> Dad<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group4','Dad');"><i class="icon-trash"></i></button></p></li>
+					<li><p><i class="icon-user"></i> Mom<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group3','Mom');"><i class="icon-trash"></i></button></p></li>
+					<li><p><i class="icon-user"></i> Dad<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group4','Dad');"><i class="icon-trash"></i></button></p></li>
 				</div>
 			</div>
 		</div>
@@ -159,14 +159,14 @@
 			<div class="modal-form form-inline">
 				<input type="text" class="input-small" placeholder="Groupname" id="addGroupName" required>
 				<input type="text" class="input-small" placeholder="Key" id="addGroupKey">
-				<button class="btn" onClick="configManager.addGroup()"><i class="icon-th-list"></i><i class="icon-plus"></i>Add</button>
+				<button class="btn" onClick="listManager.addGroup()"><i class="icon-th-list"></i><i class="icon-plus"></i>Add</button>
 			</div>
 			<hr>
 			<h4>Add a member to a group</h4><!--maybe put here a list of the friend list and group list so user can only add existing friends in existing group-->
 			<div class="modal-form form-inline">
 				<input type="text" class="input-small" placeholder="Groupname" id="addGroupName" required>
 				<input type="text" class="input-small" placeholder="Username" id="addGroupUser">
-				<button class="btn" onClick="configManager.addFriendGroup()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
+				<button class="btn" onClick="listManager.addFriendGroup()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
 			</div>
 		</div>
 		<div class="modal-footer">
