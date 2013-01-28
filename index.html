@@ -113,11 +113,11 @@
 			<p id="friendMenu2">List empty</p>
 			<hr>
 			<h4>Add friend</h4>
-			<form class="modal-form form-inline">
+			<div class="modal-form form-inline">
 				<input type="text" class="input-small" placeholder="Username" id="addFriendName" required>
 				<input type="text" class="input-small" placeholder="Key" id="addFriendKey">
 				<button class="btn" onClick="configManager.addFriend()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
-			</form>
+			</div>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -154,18 +154,18 @@
 		<div class="modal-body">
 			<hr>
 			<h4>Add a new group</h4>
-			<form class="modal-form form-inline">
+			<div class="modal-form form-inline">
 				<input type="text" class="input-small" placeholder="Groupname" id="addGroupName" required>
 				<input type="text" class="input-small" placeholder="Key" id="addGroupKey">
 				<button class="btn" onClick="configManager.addGroup()"><i class="icon-th-list"></i><i class="icon-plus"></i>Add</button>
-			</form>
+			</div>
 			<hr>
 			<h4>Add a member to a group</h4><!--maybe put here a list of the friend list and group list so user can only add existing friends in existing group-->
-			<form class="modal-form form-inline">
+			<div class="modal-form form-inline">
 				<input type="text" class="input-small" placeholder="Groupname" id="addGroupName" required>
 				<input type="text" class="input-small" placeholder="Username" id="addGroupUser">
 				<button class="btn" onClick="configManager.addFriendGroup()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
-			</form>
+			</div>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
