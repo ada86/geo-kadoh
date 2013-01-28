@@ -129,12 +129,29 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3 id="myModalLabel">Edit Group list</h3>
 		</div>
-		<div class="modal-body">
-			<p>List empty</p>
+		<div class="modal-body tabbable" id="#groupMenu3">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#Group1" data-toggle="tab">Friends</a></li>
+				<li><a href="#Group2" data-toggle="tab">Work mates</a></li>
+				<li><a href="#Group3" data-toggle="tab">Family</a></li>
+			</ul>
+			<div class="tab-content"><!--Groupid can be anything, also groupname if it's better they just need to be in sync with above <ul> section-->
+				<div class="tab-pane active" id="Group1">
+					<li><p><i class="icon-user"></i>Lorenzo<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group1','Lorenzo');"><i class="icon-trash"></i></button></p></li>
+					<li><p><i class="icon-user"></i>Abdalla<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group1','Abdalla');"><i class="icon-trash"></i></button></p></li>
+				</div>
+				<div class="tab-pane" id="Group2">
+					<li><p><i class="icon-user"></i>Tudor<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group2','Tudor');"><i class="icon-trash"></i></button></p></li>
+					<li><p><i class="icon-user"></i>Marc<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group2','Marc');"><i class="icon-trash"></i></button></p></li>
+				</div>
+				<div class="tab-pane" id="Group3">
+					<li><p><i class="icon-user"></i>Mom<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group3','Mom');"><i class="icon-trash"></i></button></p></li>
+					<li><p><i class="icon-user"></i>Dad<button class="btn btn-link" onClick="configManager.removeFriendGroup('Group4','Dad');"><i class="icon-trash"></i></button></p></li>
+				</div>
+			</div>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-			<button class="btn btn-primary">Save changes</button>
 		</div>
 	</div>
 	
@@ -168,8 +185,10 @@
 						<span class="caret"></span>
 					</button>
 					<ul class="dropdown-menu" align="left" id="groupMenu">
-						<li align="center">Only to group</li>
-						<li align="center">List empty</li>
+						<li align="center" class="text-info">Only to group:</li>
+						<li align="center" class="text-error">List empty</li>
+						<!--here is a sample of an element in the list-->
+						<!--<li><a onClick="checkIn.putGroupLocation('GroupName');"><i class="icon-th-list"></i> GroupName</a></li>-->
 					</ul>
 				</div>
 				<br><br><br>
@@ -185,7 +204,7 @@
 							<span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" align="left" id="friendMenu">
-							<li align="center">List empty</li>
+							<li align="center" class="text-error">List empty</li>
 							<li><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
 						</ul>
 					</div>
@@ -197,8 +216,10 @@
 						<span class="caret"></span>
 					</a>
 					<ul class="dropdown-menu" align="left" id="groupMenu2">
-						<li align="center">List empty</li>
+						<li align="center" class="text-error">List empty</li>
 						<li><a href="#editGroups"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
+						<!--here is a sample of an element in the list-->
+						<!--<li><a onClick="checkIn.getGroupLocation('GroupName');"><i class="icon-th-list"></i> GroupName</a></li>-->
 					</ul>
 				</div>
 				<br><br>
