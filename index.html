@@ -222,8 +222,8 @@
 			<div class"span4">
 				<h2>Find friends</h2><br>
 				<div class="form-search">
-					<input id="findMobile" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) checkIn.getFriendLocation(document.getElementById('findMobile').value)">
-					<button id="btnFindMobile" class="btn btn-primary" onClick="checkIn.getFriendLocation(document.getElementById('findMobile').value)"><i class="icon-search icon-white"></i> Find</button>
+					<input id="findMobile" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) checkIn.getFriendLocation(undefined, 'mobile')">
+					<button id="btnFindMobile" class="btn btn-primary" onClick="checkIn.getFriendLocation(undefined, mobile)"><i class="icon-search icon-white"></i> Find</button>
 				</div><br>
 				<button class="btn btn-primary" data-toggle="collapse" data-target="#friendListMobile"><i class"icon-user icon-white"></i> Friend list</button>
 				<div id="friendListMobile" class="collapse">
@@ -285,9 +285,9 @@
 			<div class="span4">
 				<h2>Find friends</h2><br>
 				<div class="form-search">
-					<input id="find" class="span6" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) checkIn.getFriendLocation(document.getElementById('find').value)">
+					<input id="find" class="span6" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) checkIn.getFriendLocation(undefined, 'desktop')">
 					<div class="btn-group">
-						<button id="btnFind" class="btn btn-primary" onClick="checkIn.getFriendLocation(document.getElementById('find').value)"><i class="icon-search icon-white"></i> Find</button>
+						<button id="btnFind" class="btn btn-primary" onClick="checkIn.getFriendLocation(undefined, 'desktop')"><i class="icon-search icon-white"></i> Find</button>
 						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Friend list
 							<span class="caret"></span>
 						</button>
