@@ -231,10 +231,10 @@
 			<div class="span4">
 		<!--Find Friends and Group-->
 				<h2>Find friends</h2><br>
-				<form action="checkIn.getFriendLocation()" class="form-search hidden-phone visible-desktop">
-					<input id="friendName" type="text" placeholder="Username" >
+				<div class="form-search hidden-phone visible-desktop">
+					<input id="friendName" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()">
 					<div class="btn-group">
-						<button class="btn btn-primary" id="btnGetFriendLocation" type="submit"><i class="icon-search icon-white"></i> Find</button>
+						<button class="btn btn-primary" id="btnGetFriendLocation" onClick="checkIn.getFriendLocation()"><i class="icon-search icon-white"></i> Find</button>
 						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 							<span class="caret"></span>
 						</button>
@@ -243,12 +243,12 @@
 							<li><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
 						</ul>
 					</div><br>
-				</form>
-				<form class="form-search visible-phone hidden-desktop" >
+				</div>
+				<div class="form-search visible-phone hidden-desktop" >
 					<input id="friendName" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()">
-					<button class="btn btn-primary" id="btnGetFriendLocation" onClick="checkIn.getFriendLocation()"><i class="icon-search icon-white"></i> Find</button><br>
-				</form>	
-				<div class="visible-phone hidden-desktop">
+					<button class="btn btn-primary" id="btnGetFriendLocation" onClick="checkIn.getFriendLocation()"><i class="icon-search icon-white"></i> Find</button>
+				</div>	
+				<div class="visible-phone hidden-desktop"><br>
 					<button class="btn btn-primary" data-toggle="collapse" data-target="#list2"><i class"icon-user icon-white"></i> Friend list</button>
 					<div id="list2" class="collapse" id="friendMenuMobile">
 						<p align="center" class="text-error">List empty</p>
