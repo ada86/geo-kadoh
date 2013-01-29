@@ -198,42 +198,41 @@
 			<div class="span2 visible-desktop hidden-phone" id="logo"></div>
 			<div class="span9 offset1" id="mapholder"></div>
 		</div>
-		<div class="row">
-			<div class="span4">
+		<div class="row-fluid">
+			<div class="span4" id="checkInSection">
 		<!--Check in-->
 				<h2>Share my location</h2>
 				<br>
-				<div class="btn-group hidden-phone visible-desktop">
-					<button class="btn btn-primary" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To Friends</button>
-					<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe icon-white"></i> Public</button>
-					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-						<span class="caret"></span>
-					</button>
-					<ul class="dropdown-menu"  id="groupMenu">
-						<li class="text-info">Only to group:</li>
-						<li class="text-error">List empty</li>
-						<!--here is a sample of an element in the list-->
-						<!--<li align="left"><a onClick="checkIn.putGroupLocation('GroupName');"><i class="icon-th-list"></i> GroupName</a></li>-->
-					</ul>
+				<div class="hidden-phone visible-desktop">
+					<div class="btn-group">
+						<button class="btn btn-primary" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To Friends</button>
+						<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe icon-white"></i> Public</button>
+						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+							<span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu pull-right" id="groupMenu">
+							<li class="text-info">Only to group:</li>
+							<li class="text-error">List empty</li>
+							<!--here is a sample of an element in the list-->
+							<!--<li align="left"><a onClick="checkIn.putGroupLocation('GroupName');"><i class="icon-th-list"></i> GroupName</a></li>-->
+						</ul>
+					</div>
 				</div>
 				<div class="visible-phone hidden-desktop">
 					<button class="btn btn-primary" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To Friends</button>
-					<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe"></i> Public</button>
-					<a class="dropdown-toggle btn btn-primary" data-toggle="dropdown">
-						Only to group
-						<b class="caret"></b>
-					</a>
-					<ul class="dropdown-menu">
-						<li align="center" class="text-error">List empty</li>
-					</ul>
+					<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe icon-white"></i> Public</button>
+					<button class="btn btn-primary" data-toggle="collapse" data-target="#list1"><i class="icon-th-list icon-white"></i> To group</button>
+					<div id="list1" class="collapse">
+						<p align="center" class="text-error">List empty</p>
+					</div>
 				</div>
 				<br><br><br>
 			</div>
 			<div class="span4">
 		<!--Find Friends and Group-->
-				<h2>Find friend</h2><br>
-				<div class="input-append">
-					<input class="input-medium" id="friendName" type="text" placeholder="Type friends username" onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()"/>
+				<h2>Find friends</h2><br>
+				<form class="form-search hidden-phone visible-desktop">
+					<input id="friendName" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()">
 					<div class="btn-group">
 						<button class="btn btn-primary" id="btnGetFriendLocation" onClick="checkIn.getFriendLocation()"><i class="icon-search icon-white"></i> Find</button>
 						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -243,20 +242,39 @@
 							<li align="center" class="text-error">List empty</li>
 							<li><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
 						</ul>
-					</div>
-				</div><br>
+					</div><br>
+				</form>
+				<form class="form-search visible-phone hidden-desktop">
+					<input id="friendName" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()">
+					<button class="btn btn-primary" id="btnGetFriendLocation" onClick="checkIn.getFriendLocation()"><i class="icon-search icon-white"></i> Find</button><br>
+				</form>	
+				<div class="visible-phone hidden-desktop">
+					<button class="btn btn-primary" id="btnGetFriendLocation" onClick="checkIn.getFriendLocation()"><i class="icon-search icon-white"></i> Find</button>
+					<button class="btn btn-primary" data-toggle="collapse" data-target="#list2"><i class"icon-user icon-white"></i> Friend list</button>
+					<div id="list2" class="collapse" id="friendMenuMobile">
+						<p align="center" class="text-error">List empty</p>
+						<p><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></p>
+					</div><br>
+				</div>
 				<h2>Find group</h2><br>
-				<div class="btn-group">
-					<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-search icon-white"></i>
-						Find Group
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu" align="left" id="groupMenu2">
-						<li align="center" class="text-error">List empty</li>
-						<li><a href="#editGroups"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
-						<!--here is a sample of an element in the list-->
-						<!--<li><a onClick="checkIn.getGroupLocation('GroupName');"><i class="icon-th-list"></i> GroupName</a></li>-->
-					</ul>
+				<div class="hidden-phone visible-desktop">
+					<div class="btn-group">
+						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-search icon-white"></i> Group list <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" align="left" id="groupMenu2">
+							<li align="center" class="text-error">List empty</li>
+							<li><a href="#editGroups"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
+							<!--here is a sample of an element in the list-->
+							<!--<li><a onClick="checkIn.getGroupLocation('GroupName');"><i class="icon-th-list"></i> GroupName</a></li>-->
+						</ul>
+					</div>
+				</div>
+				<div class="visible-phone hidden-desktop">
+					<button class="btn btn-primary" data-toggle="collapse" data-target="#list3"><i class"icon-search icon-white"></i> Find Group</button>
+					<div id="list3" class="collapse" id="groupMenu3">
+						<p class="text-error">List empty</p>
+						<p><a href="#editGroups"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></p>
+					</div>
 				</div>
 				<br><br>
 			</div>
