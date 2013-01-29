@@ -66,6 +66,7 @@
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3 id="myModalLabel">Log in</h3>
+			<p>If you don't have an account, we'll create it for you. Just enter desired username and password.</p>
 		</div>
 		<form class="modal-form">
 			<div class="modal-body">
@@ -178,7 +179,7 @@
 	<!--Main body ********************************************* -->
 	<div class="container pagination-centered">
 		<!--Topic desktop-->
-		<div class="hero-unit hidden-phone visible-desktop">
+		<div class="hero-unit hidden-phone visible-desktop" id="hero1">
 			<h1>Welcome to Geo-KadOH<img height="133" width="135"src="bootstrap/img/Geo-KadOH_logo.png"></h1>
 			<p>The decentralized location sharing Web application</p>
 		</div>
@@ -192,6 +193,7 @@
 		</div>
 		<!--Map-->
 		<div class="row-fluid collapse in">
+			<div class="span2 visible-desktop hidden-phone" id="logo"></div>
 			<div class="span10 offset1" id="mapholder"></div>
 		</div>
 		<div class="row">
