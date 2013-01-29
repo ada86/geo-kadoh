@@ -24,6 +24,7 @@
 		function log(txt){
 			text = txt+"<br>".concat(text);
 			document.getElementById("output").innerHTML=text;
+			document.getElementById("outputMobile").innerHTML=text;
 		}
 	</script>
 	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
@@ -31,22 +32,24 @@
 	<title>Geo-KadOH</title>
 </head>
 <body>
-
-	<!--Navigation bar **************************************** -->
-
+	<!--
+	**** Navigation bar ***********************************************************************************
+	*******************************************************************************************************
+	*******************************************************************************************************
+	-->
 	<div class="navbar navbar-static-top">
 		<div class="navbar-inner">
 			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target="nav-collapse">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
 				<a class="brand">Geo-KadOH</a>
 				<div class="nav-collapse collapse">
-					<p class="navbar-text pull-right" id="loggedin">
+					<p id="loggedIn" class="navbar-text pull-right">
 					</p>
-					<ul class="nav" id="info">
+					<ul id="info" class="nav">
 						<li><button class="btn btn-success" href="#Login" data-toggle="modal"> Log in</button></li>
 					</ul>
 					<ul class="nav">
@@ -59,8 +62,13 @@
 			</div>
 		</div>
 	</div>
-	
-	<!--Modals ************************************************ -->
+
+
+	<!--
+	**** Modals *******************************************************************************************
+	*******************************************************************************************************
+	*******************************************************************************************************
+	-->
 		<!--Login-->
 	<div id="Login" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
 		<div class="modal-header">
@@ -70,10 +78,10 @@
 		</div>
 		<form class="modal-form">
 			<div class="modal-body">
-				<input type="text" id="myName" class="input-block-level" placeholder="Username"  required>
-				<input type="password" id="password" class="input-block-level" placeholder="Password"  required>
+				<input id="myName" type="text" class="input-block-level" placeholder="Username"  required>
+				<input id="password" type="password" class="input-block-level" placeholder="Password"  required>
 				<label class="checkbox">
-					<input type="checkbox" name="remember-me" id="remember-me">Remember my configuration on this machine</input>
+					<input id="remember-me" type="checkbox" name="remember-me">Remember my configuration on this machine</input>
 				</label>
 			</div>
 			<div class="modal-footer">
@@ -82,10 +90,10 @@
 		</form>
 	</div>
 		<!--Guide-->
-	<div id="Guide" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="Guide" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Guide for using Geo-KadOH</h3>
+			<h3 id="myModalLabel2">Guide for using Geo-KadOH</h3>
 		</div>
 		<div class="modal-body pagination-centered">
 			<img height="80" width="83" src="bootstrap/img/Geo-KadOH_logo.png">
@@ -108,18 +116,18 @@
 		</div>
 	</div>
 		<!--Edit Friend-->
-	<div id="editFriends" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="editFriends" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3" aria-hidden="true">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Edit friend list</h3>
+			<h3 id="myModalLabel3">Edit friend list</h3>
 		</div>
 		<div class="modal-body" >
-			<p id="friendMenu2">List empty</p>
+			<p id="friendListModal">List empty</p>
 			<hr>
 			<h4>Add friend</h4>
 			<div class="modal-form form-inline">
-				<input type="text" class="input-small" placeholder="Username" id="addFriendName" required>
-				<input type="text" class="input-small" placeholder="Key" id="addFriendKey">
+				<input id="addFriendName" type="text" class="input-small" placeholder="Username" required>
+				<input id="addFriendKey" type="text" class="input-small" placeholder="Key">
 				<button class="btn" onClick="listManager.addFriend()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
 			</div>
 		</div>
@@ -128,10 +136,10 @@
 		</div>
 	</div>
 		<!--Edit Group-->
-	<div id="editGroups" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="editGroups" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4" aria-hidden="true">
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Edit Group list</h3>
+			<h3 id="myModalLabel4">Edit Group list</h3>
 		</div>
 		<!--Groupid can be anything, also groupname if it's better they just need to be in sync with above <ul> section-->
 		<div class="modal-body tabbable" id="#groupMenu3">
@@ -166,7 +174,7 @@
 			<hr>
 			<h4>Add a member to a group</h4><!--maybe put here a list of the friend list and group list so user can only add existing friends in existing group-->
 			<div class="modal-form form-inline">
-				<input type="text" class="input-small" placeholder="Groupname" id="addGroupName" required>
+				<input type="text" class="input-small" placeholder="Groupname" id="addGroupName2" required>
 				<input type="text" class="input-small" placeholder="Username" id="addGroupUser">
 				<button class="btn" onClick="listManager.addFriendGroup()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
 			</div>
@@ -176,118 +184,145 @@
 		</div>
 	</div>
 	
-	<!--Main body ********************************************* -->
-	<div class="container pagination-centered">
-		<!--Topic desktop-->
-		<div id="hero1">
-			<div class="hero-unit hidden-phone visible-desktop" >
-				<h1>Welcome to Geo-KadOH<img height="133" width="135"src="bootstrap/img/Geo-KadOH_logo.png"></h1>
-				<p>The decentralized location sharing Web application</p>
-			</div>
-		</div>
-		<!--Topic mobile-->
-		<div class="page-header visible-phone hidden-desktop">
+
+	<!--
+	**** Main body Mobile *********************************************************************************
+	**** This part is only visible to mobile devices ******************************************************
+	*******************************************************************************************************
+	-->
+	<div class="container pagination-centered visible-phone hidden-desktop">
+		<!--Topic-->
+		<div class="page-header">
 			<img height="80" width="83"src="bootstrap/img/Geo-KadOH_logo.png">
 			<h1>Welcome to Geo-KadOH<br>
 				<small>The decentralized location sharing Web application</small>
 			</h1>
-			<h4 id="loggedin_phone"><button class="btn btn-success" href="#Login"  data-toggle="modal"> Log in</button></h4>
+			<h4 id="loggedInMobile"><button class="btn btn-success" href="#Login"  data-toggle="modal"> Log in</button></h4>
 		</div>
 		<!--Map-->
 		<div class="row-fluid collapse in">
-			<div class="span2 visible-desktop hidden-phone" id="logo"></div>
-			<div class="span9 offset1" id="mapholder"></div>
+			<div class="span7 offset1" id="mapholderMobile"></div>
 		</div>
 		<div class="row-fluid">
-			<div class="span4" id="checkInSection">
-		<!--Check in-->
+			<!--Share my location-->
+			<div class="span4" id="shareMyLocationMobile">
 				<h2>Share my location</h2>
 				<br>
-				<div class="hidden-phone visible-desktop">
-					<div class="btn-group">
-						<button class="btn btn-primary" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To Friends</button>
-						<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe icon-white"></i> Public</button>
-						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-							<span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu pull-right" id="groupMenu">
-							<li class="text-info">Only to group:</li>
-							<li class="text-error">List empty</li>
-							<!--here is a sample of an element in the list-->
-							<!--<li align="left"><a onClick="checkIn.putGroupLocation('GroupName');"><i class="icon-th-list"></i> GroupName</a></li>-->
-						</ul>
-					</div>
-				</div>
-				<div class="visible-phone hidden-desktop">
-					<button class="btn btn-primary" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To Friends</button>
-					<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe icon-white"></i> Public</button>
-					<button class="btn btn-primary" data-toggle="collapse" data-target="#list1"><i class="icon-th-list icon-white"></i> To group</button>
-					<div id="list1" class="collapse">
-						<p align="center" class="text-error">List empty</p>
-					</div>
+				<button class="btn btn-primary" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To friends</button>
+				<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe icon-white"></i> To public</button>
+				<button class="btn btn-primary" data-toggle="collapse" data-target="#ShareToGroupMobile"><i class="icon-th-list icon-white"></i> To group</button>
+				<div id="ShareToGroupMobile" class="collapse">
+					<p align="center" class="text-error">List empty</p>
 				</div>
 				<br><br><br>
 			</div>
-			<div class="span4">
-		<!--Find Friends and Group-->
+			<!--Find Friends and Group-->
+			<div class"span4">
 				<h2>Find friends</h2><br>
-				<div class="form-search hidden-phone visible-desktop">
-					<input id="friendName" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()">
+				<div class="form-search">
+					<input id="findMobile" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) checkIn.getFriendLocation(document.getElementById('findMobile').value)">
+					<button id="btnFindMobile" class="btn btn-primary" onClick="checkIn.getFriendLocation(document.getElementById('findMobile').value)"><i class="icon-search icon-white"></i> Find</button>
+				</div><br>
+				<button class="btn btn-primary" data-toggle="collapse" data-target="#friendListMobile"><i class"icon-user icon-white"></i> Friend list</button>
+				<div id="friendListMobile" class="collapse">
+					<p align="center" class="text-error">List empty</p>
+					<p><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></p>
+				</div><br>
+				<h2>Find group</h2><br>
+				<button class="btn btn-primary" data-toggle="collapse" data-target="#groupListMobile"><i class"icon-search icon-white"></i> Find Group</button>
+				<div id="groupListMobile" class="collapse">
+					<p class="text-error">List empty</p>
+					<p><a href="#editGroups" role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></p>
+				</div>
+				<br><br>
+			</div>
+			<!--Output-->
+			<div class="span4">
+				<h2>Output</h2>
+				<br>
+				<pre id="outputMobile" class="pre pre-scrollable" style="height: 6pc;">Trying to connect to the DHT</pre><br>
+			</div>
+		</div>
+	</div>
+
+
+	<!--
+	**** Main body Desktop ********************************************************************************
+	**** This part is only visible to desktop devices *****************************************************
+	*******************************************************************************************************
+	-->
+	<div class="container pagination-centered hidden-phone visible-desktop">
+		<!--Topic-->
+		<div id="welcome">
+			<div class="hero-unit ">
+				<h1>Welcome to Geo-KadOH<img height="133" width="135"src="bootstrap/img/Geo-KadOH_logo.png"></h1>
+				<p>The decentralized location sharing Web application</p>
+			</div>
+		</div>
+		<!--Map-->
+		<div class="row-fluid collapse in">
+			<div id="logo" class="span2"></div>
+			<div id="mapholder"class=" span9 offset1"></div>
+		</div>
+		<div class="row-fluid">
+		<!--Share my location-->
+			<div class="span4" id="shareMyLocation">
+				<h2>Share my location</h2>
+				<br>
+				<div class="btn-group">
+					<button class="btn btn-primary" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To friends</button>
+					<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe icon-white"></i> To public</button>
+					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-th-list icon-white"></i> To group <span class="caret"></span></button>
+					<ul id="shareToGroup" class="dropdown-menu pull-right">
+						<li class="text-info">Only to group:</li>
+						<li class="text-error">List empty</li>
+					</ul>
+				</div>
+				<br><br><br>
+			</div>
+		<!--Find Friends and Group-->
+			<div class="span4">
+				<h2>Find friends</h2><br>
+				<div class="form-search">
+					<input id="find" class="span6" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) checkIn.getFriendLocation(document.getElementById('find').value)">
 					<div class="btn-group">
-						<button class="btn btn-primary" id="btnGetFriendLocation" onClick="checkIn.getFriendLocation()"><i class="icon-search icon-white"></i> Find</button>
-						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+						<button id="btnFind" class="btn btn-primary" onClick="checkIn.getFriendLocation(document.getElementById('find').value)"><i class="icon-search icon-white"></i> Find</button>
+						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Friend list
 							<span class="caret"></span>
 						</button>
-						<ul class="dropdown-menu" align="left" id="friendMenu">
+						<ul id="friendList" class="dropdown-menu" align="left">
 							<li align="center" class="text-error">List empty</li>
 							<li><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
 						</ul>
 					</div><br>
 				</div>
-				<div class="form-search visible-phone hidden-desktop" >
-					<input id="friendName" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) document.getElementById('btnGetFriendLocation').click()">
-					<button class="btn btn-primary" id="btnGetFriendLocation" onClick="checkIn.getFriendLocation()"><i class="icon-search icon-white"></i> Find</button>
-				</div>	
-				<div class="visible-phone hidden-desktop"><br>
-					<button class="btn btn-primary" data-toggle="collapse" data-target="#list2"><i class"icon-user icon-white"></i> Friend list</button>
-					<div id="list2" class="collapse" id="friendMenuMobile">
-						<p align="center" class="text-error">List empty</p>
-						<p><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></p>
-					</div><br>
-				</div>
 				<h2>Find group</h2><br>
-				<div class="hidden-phone visible-desktop">
-					<div class="btn-group">
-						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-search icon-white"></i> Group list <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" align="left" id="groupMenu2">
-							<li align="center" class="text-error">List empty</li>
-							<li><a href="#editGroups"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
-							<!--here is a sample of an element in the list-->
-							<!--<li><a onClick="checkIn.getGroupLocation('GroupName');"><i class="icon-th-list"></i> GroupName</a></li>-->
-						</ul>
-					</div>
-				</div>
-				<div class="visible-phone hidden-desktop">
-					<button class="btn btn-primary" data-toggle="collapse" data-target="#list3"><i class"icon-search icon-white"></i> Find Group</button>
-					<div id="list3" class="collapse" id="groupMenu3">
-						<p class="text-error">List empty</p>
-						<p><a href="#editGroups"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></p>
-					</div>
-				</div>
-				<br><br>
+				<div class="btn-group">
+					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-search icon-white"></i> Group list <span class="caret"></span>
+					</button>
+					<ul id="groupMenu2" class="dropdown-menu" align="left">
+						<li align="center" class="text-error">List empty</li>
+						<li><a href="#editGroups"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
+					</ul>
+				</div><br><br>
 			</div>
 		<!--Output-->
 			<div class="span4">
 				<h2>Output</h2>
 				<br>
-				<pre class="pre pre-scrollable" style="height: 10pc;" id="output">Trying to connect to the DHT</pre><br>
+				<pre id="output" class="pre pre-scrollable" style="height: 10pc;">Trying to connect to the DHT</pre><br>
 			</div>
 		</div>
 	</div>
+
+
+	<!--
+	**** Footer *******************************************************************************************
+	*******************************************************************************************************
+	*******************************************************************************************************
+	-->
 	<hr>
-		<!--Footer-->
-	<div id="footer">
+	<div>
 		<div class="container">
 			<p class="muted credit"><strong>Abdalla Taha</strong> and <strong>Lorenzo Rand&eacute</strong></p>
 		</div>
