@@ -209,26 +209,24 @@
 					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
 						<span class="caret"></span>
 					</button>
-					<ul class="dropdown-menu" align="left" id="groupMenu">
-						<li align="center" class="text-info">Only to group:</li>
-						<li align="center" class="text-error">List empty</li>
+					<ul class="dropdown-menu"  id="groupMenu">
+						<li class="text-info">Only to group:</li>
+						<li class="text-error">List empty</li>
 						<!--here is a sample of an element in the list-->
-						<!--<li><a onClick="checkIn.putGroupLocation('GroupName');"><i class="icon-th-list"></i> GroupName</a></li>-->
+						<!--<li align="left"><a onClick="checkIn.putGroupLocation('GroupName');"><i class="icon-th-list"></i> GroupName</a></li>-->
 					</ul>
 				</div>
-				<ul class="nav nav-pills visible-phone hidden-desktop">
-					<li><button class="btn btn-primary" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To Friends</button></li>
-					<li><button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe"></i> Public</button></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-							Only to group
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu">
-							<li align="center" class="text-error">List empty</li>
-						</ul>
-					</li>
-				</ul>
+				<div class="visible-phone hidden-desktop">
+					<button class="btn btn-primary" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To Friends</button>
+					<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe"></i> Public</button>
+					<a class="dropdown-toggle btn btn-primary" data-toggle="dropdown">
+						Only to group
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li align="center" class="text-error">List empty</li>
+					</ul>
+				</div>
 				<br><br><br>
 			</div>
 			<div class="span4">
