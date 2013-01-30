@@ -143,25 +143,8 @@
 		</div>
 		<!--Groupid can be anything, also groupname if it's better they just need to be in sync with above <ul> section-->
 		<div class="modal-body tabbable" >
-			<ul id="#groupEditList" class="nav nav-tabs">
-				<li><a href="#Group1" data-toggle="tab">Friends</a></li>
-				<li><a href="#Group2" data-toggle="tab">Work mates</a></li>
-				<li><a href="#Group3" data-toggle="tab">Family</a></li>
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane active" id="Group1">
-					<li><p><i class="icon-user"></i> Lorenzo<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group1','Lorenzo');"><i class="icon-trash"></i></button></p></li>
-					<li><p><i class="icon-user"></i> Abdalla<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group1','Abdalla');"><i class="icon-trash"></i></button></p></li>
-				</div>
-				<div class="tab-pane" id="Group2">
-					<li><p><i class="icon-user"></i> Tudor<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group2','Tudor');"><i class="icon-trash"></i></button></p></li>
-					<li><p><i class="icon-user"></i> Marc<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group2','Marc');"><i class="icon-trash"></i></button></p></li>
-				</div>
-				<div class="tab-pane" id="Group3">
-					<li><p><i class="icon-user"></i> Mom<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group3','Mom');"><i class="icon-trash"></i></button></p></li>
-					<li><p><i class="icon-user"></i> Dad<button class="btn btn-link" onClick="listManager.removeFriendGroup('Group4','Dad');"><i class="icon-trash"></i></button></p></li>
-				</div>
-			</div>
+			<ul id="groupEditList" class="nav nav-tabs"></ul>
+			<div id="groupEditContentList" class="tab-content"></div>
 		</div>
 		<div class="modal-body">
 			<hr>
