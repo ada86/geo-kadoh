@@ -213,9 +213,9 @@
 				<button class="btn btn-primary" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To friends</button>
 				<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe icon-white"></i> To public</button>
 				<button class="btn btn-primary" data-toggle="collapse" data-target="#shareToGroupMobile"><i class="icon-th-list icon-white"></i> To group</button>
-				<div id="shareToGroupMobile" class="collapse">
-					<p align="center" class="text-error">List empty</p>
-				</div>
+				<ul id="shareToGroupMobile" class="nav nav-pills nav-stacked collapse">
+					<li class="text-error">List empty</li>
+				</ul>
 				<br><br><br>
 			</div>
 			<!--Find Friends and Group-->
@@ -226,16 +226,16 @@
 					<button id="btnFindMobile" class="btn btn-primary" onClick="checkIn.getFriendLocation(undefined, mobile)"><i class="icon-search icon-white"></i> Find</button>
 				</div><br>
 				<button class="btn btn-primary" data-toggle="collapse" data-target="#friendListMobile"><i class"icon-user icon-white"></i> Friend list</button>
-				<div id="friendListMobile" class="collapse">
-					<p align="center" class="text-error">List empty</p>
-					<p><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></p>
-				</div><br><br>
+				<ul id="friendListMobile" class="nav nav-pills nav-stacked collapse">
+					<li class="text-error">List empty</li>
+					<li><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
+				</ul><br><br>
 				<h2>Find group</h2><br>
 				<button class="btn btn-primary" data-toggle="collapse" data-target="#groupListMobile"><i class"icon-search icon-white"></i> Find Group</button>
-				<div id="groupListMobile" class="collapse">
-					<p class="text-error">List empty</p>
-					<p><a href="#editGroups" role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></p>
-				</div>
+				<ul id="groupListMobile" class="nav nav-pills nav-stacked collapse">
+					<li class="text-error">List empty</li>
+					<li><a href="#editGroups" role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
+				</ul>
 				<br><br>
 			</div>
 			<!--Output-->
@@ -291,8 +291,8 @@
 						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Friend list
 							<span class="caret"></span>
 						</button>
-						<ul id="friendList" class="dropdown-menu" align="left">
-							<li align="center" class="text-error">List empty</li>
+						<ul id="friendList" class="dropdown-menu">
+							<li class="text-error">List empty</li>
 							<li><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
 						</ul>
 					</div><br><br>
@@ -301,8 +301,8 @@
 				<div class="btn-group">
 					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-search icon-white"></i> Group list <span class="caret"></span>
 					</button>
-					<ul id="groupList" class="dropdown-menu" align="left">
-						<li align="center" class="text-error">List empty</li>
+					<ul id="groupList" class="dropdown-menu">
+						<li class="text-error">List empty</li>
 						<li><a href="#editGroups"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
 					</ul>
 				</div><br><br>
