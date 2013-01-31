@@ -294,7 +294,7 @@
 			<hr>
 			<div id="groupEditContentList" class="tab-content"></div>
 		</div>
-		<div class="modal-body" align="center">
+		<div class="modal-body">
 			<hr>
 			<h4>Add a new group</h4>
 			<div class="modal-form form-inline">
@@ -302,12 +302,11 @@
 				<input type="text" class="input-small" placeholder="Password" id="addGroupKey">
 				<button class="btn btn-info" onClick="listManager.addGroup()"><i class="icon-th-list"></i><i class="icon-plus"></i>Add</button>
 			</div>
-			<hr>
 			<h4>Add a member to a group</h4>
 			<div class="row-fluid">
-				<select id="addFriendToGroup_group" class="selectpicker span3" data-style="btn-inverse">
+				<select id="addFriendToGroup_group" class="selectpicker span3 dropup" data-style="btn-inverse">
 				</select>
-				<select id="addFriendToGroup_friend" class="selectpicker span3" data-style="btn-success">
+				<select id="addFriendToGroup_friend" class="selectpicker span3 dropup" data-style="btn-success">
 				</select>
 				<a class="btn btn-info" onClick="listManager.addFriendGroup()"><i class="icon-user icon-white"></i><i class="icon-plus"></i>Add</a>
 			</div>
