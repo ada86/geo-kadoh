@@ -60,7 +60,7 @@
 						<li><button class="btn btn-success" href="#Login" data-toggle="modal"> Log in</button></li>
 					</ul>
 					<ul class="nav">
-						<li><a href="#Guide" data-toggle="modal">Guide</a></li>
+						<li><button class="btn btn-info" href="#Guide" data-toggle="modal">Guide</button></li>
 						<li class="divider-vertical"></li>
 						<li><a href="https://github.com/ada86/geo-kadoh">Source</a></li>
 						<li><a href="https://github.com/ada86/geo-kadoh/blob/master/README.md">Documentation</a></li>
@@ -104,19 +104,75 @@
 		</div>
 		<div class="modal-body pagination-centered">
 			<img height="80" width="83" src="bootstrap/img/Geo-KadOH_logo.png">
-			<p class="lead">Geo-KadOH is a decentralized solution for location sharing. You can easily create an account and start sharing your location with your friends.</p>
-			<h4>About log in</h4>
-			<p>If you don't have an account just type any username and password, and the system will create for you an account.</p>
-			<h4>Output box</h4>
-			<p>This box tells you in what state the website is. It also gives you responses on whether thigs go well or not.</p>
-			<h4>Locating yourself</h4>
-			<p>To locate yourself and share it to your friends just push the Share my location button. Your browser may ask you to allow location sharing which is required for this functionality. Succesfully shared location will be announced in the output box and your location will shown in the map. If you wish to share only with your group members then click on the small arrow and select the group you want to share with.</p>
+			<p class="lead">Geo-KadOH is a decentralized solution for sharing your location with your friends.</p>
+			
+			<h4>Logging in and creating an account</h4>
+			<p align="left">If you don't have an account just type any username and password in the log in field, and the system will create for you an account. Else just log in with your credentials and the system will retrieve your information.</p>
+			
+			<h4>Your public key</h4>
+			<p align="left">Geo-kadoh uses encryption to secure location sharing between friends and groups. Therefore, for your friends to be able to find you, you need to provide them your personal public key. You'll find your public key by clicking on <strong>Show my key</strong> button on the top left (of course after loging in) and the key will appear in the <strong>Output</strong> box.<br><br><small class="text-warning">For the moment sharing the key is totally up to you. In the future the system might provide an alternative way to share the key.</small></p>
+			
+			<h4>Friends</h4>
+			<p align="left">If you want to locate your friends with their public key, you'll need to add them in your friend list. After logging in, in the <strong>Friends and Groups</strong> section under <strong>Friends</strong> button, a window will pop up and you can add new friends on your list. <i class="text-warning">Be aware, the system will not check if the user exists or not. So you need to be careful with typos.</i>.</p>
+			<ul align="left">
+				<li>Add friend:
+					<ul>
+						<li>Enter your friends username and public key and click <strong>Add</strong> button. Now your friend will appear on your list.</li>
+					</ul>
+				</li>
+				<li>Remove friend:
+					<ul>
+						<li>Just click on the trash can button and your friend will be removed.</li>
+					</ul>
+				</li>
+			</ul>
+			<p align="left">You can close the window by clicking on the button <strong>close</strong> or on the dark area around the window.</p>
+
+			<h4>Groups</h4>
+			<p align="left">If you wish to share your location only with a group of friends, then you can create a group by clicking on <strong>Groups</strong> button under <strong>Friends and Groups</strong> section. A new window will pop up and you can edt your group setting. The groups are common groups. It means that when you create a group, the friends belongig in that group must have the same group created.</p>
+			<ul align="left">
+				<li>Add a new group and members:
+					<ul>
+						<li>Under <strong>Add a new group</strong> section enter the groups name you want to belong and groups password. The group name and the password must be common with all the group members. Click on <strong>Add</strong> button and the group will be created and appears as a new tab.</li>
+						<li>To add members of the group, under <strong>Add a member to a group</strong> section, select the group and the friend you want to add. Click <strong>Add</strong> button and the friend will appear on the groups list.</li>
+					</ul>
+				</li>
+				<li>Remove a group and/or a member of the group:
+					<ul>
+						<li>To remove a group, just click on the trash can under the name of the group. <i class="text-warning">Note: when you remove a group all the member will be removed to.</i></li>
+						<li>To remove a group member, just click on the trash can next to the friend and the friend will be removed from the group.</li>
+					</ul>
+				</li>
+			</ul>
+			<p class="text-warning" align="left">Note: All your friends who has your public key and the same common group. After removing a member from a group, he/she can still locate you if you share your location to the group. By removing a member from the group, you only prevent yourself of locating him/her when you locate your group members locations.</p>
+
+			<h4>Sharing your location</h4>
+			<p align="left">There are three different targets to share your location. It depends on, with who do you want share.</p>
+				<ul align="left">
+					<li>To friends:
+						<li>Only your friends who has your public key can retrieve your location.</li>
+					</li>
+					<li>To public:
+						<li>Anyone who know just your username can locate you.</li>
+					</li>
+					<li>To group:
+						<li>After selecting a group you wish to share with. Only the group members with common group can locate you</li>
+					</li>
+				</ul>
+			<p align="left">Your browser may ask you to allow location sharing which is required for this functionality. Succesfully shared location will be announced in the <strong>Output</strong> box and your location will be shown on the map.</p>
+			
 			<h4>Finding friends and groups</h4>
-			<p>Just type your friends username and we'll see if he has shared his location. There is a list of your saved friends behind the arrow. You can modify the list with edit button. After you have selected a friend we'll show you in the output box if the friends location was found. The friend will be then shown in the map. There is also a possibility</p>
+			<p align="left">Under <strong>Find friends</strong> you can type your friends username to locate his public location. To locate your friend in the friend list, click on <strong>Friend list</strong> and then your friends name. To locate all the group members, under <strong>Find group</strong> section click on the <strong>Group list</strong> button and select the group you want to locate.</p>
+			<p align="left">If the location is found, a map will appear and the coordinates in the <strong>Output</strong> box. When locating groups, you can click on the coordinate to open the map in Google Maps website. If some users location are not found it will be announced also in the <strong>Output</strong> box.</p>
+
+			<h4>Output box</h4>
+			<p align="left">This box tells you in what state the website is. It also gives you responses on whether thigs go well or not.</p>
+			
 			<h4>Requirement</h4>
-			<p>You can use both desktop and mobile devices to use Geo-KadOH. Only requirement is that the browser or the device should support HTML5.</p>
+			<p align="left">You can use both desktop and mobile devices to use Geo-KadOH. Only requirement is that the browser or the device should support HTML5.</p>
+			
 			<h4>Contact us</h4>
-			<p>If you have some feedback on the webpage, we'll be happy to hear it. Just <a href="mailto:abdalla.taha@eurecom.fr,lorenzo.rande@eurecom.fr">click here</a></p>
+			<p align="left">If you have some feedback off the webpage, we'll be happy to hear it. Just <a href="mailto:abdalla.taha@eurecom.fr,lorenzo.rande@eurecom.fr">click here</a></p>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -134,7 +190,7 @@
 			<h4>Add friend</h4>
 			<div class="modal-form form-inline">
 				<input id="addFriendName" type="text" class="input-small" placeholder="Username" required>
-				<input id="addFriendKey" type="text" class="input-mlock-level" placeholder="Key">
+				<input id="addFriendKey" type="text" class="input-mlock-level" placeholder="Public key">
 				<button class="btn" onClick="listManager.addFriend()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
 			</div>
 		</div>
@@ -249,9 +305,11 @@
 	<div class="container pagination-centered hidden-phone visible-desktop">
 		<!--Topic-->
 		<div id="welcome">
-			<div class="hero-unit ">
+			<div class="hero-unit">
 				<h1>Welcome to Geo-KadOH<img height="133" width="135"src="bootstrap/img/Geo-KadOH_logo.png"></h1>
-				<p>The decentralized location sharing Web application</p>
+				<p>The decentralized location sharing Web application</p><br>
+				<button class="btn btn-success btn-large" href="#Login" data-toggle="modal">Log in</button>
+				<button class="btn btn-info btn-large" href="#Guide" data-toggle="modal">Guide</button>
 			</div>
 		</div>
 		<!--Map-->
@@ -259,20 +317,26 @@
 			<div id="mapholder" class="span10 offset1"></div>
 		</div>
 		<div class="row-fluid">
-		<!--Share my location-->
+		<!--Share my location and edit lists-->
 			<div class="span4" id="shareMyLocation">
 				<h2>Share my location</h2>
 				<br>
 				<div class="btn-group">
-					<button class="btn btn-primary" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To friends</button>
+					<button class="btn btn-success" onClick="checkIn.putMyLocation(true)"><i class="icon-user icon-white"></i> To friends</button>
 					<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe icon-white"></i> To public</button>
-					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-th-list icon-white"></i> To group <span class="caret"></span></button>
+					<button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown"><i class="icon-th-list icon-white"></i> To group <span class="caret"></span></button>
 					<ul id="shareToGroup" class="dropdown-menu pull-right">
 						<li class="text-info">Only to group:</li>
 						<li class="text-error">List empty</li>
 					</ul>
 				</div>
 				<br><br><br>
+				<h2>Friends and groups</h2>
+				<br>
+				<div class="btn-group">
+					<button class="btn btn-primary" href="#editFriends" role="button" data-toggle="modal"><i class="icon-user icon-white"></i> Friends</button>
+					<button class="btn btn-inverse" href="#editGroups" role="button" data-toggle="modal"><i class="icon-th-list icon-white"></i> Groups</button>
+				</div>
 			</div>
 		<!--Find Friends and Group-->
 			<div class="span4">
@@ -280,16 +344,17 @@
 				<div class="form-search">
 					<input id="find" class="span6" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) checkIn.getFriendLocation(undefined, 'desktop')">
 					<div class="btn-group">
-						<button id="btnFind" class="btn btn-primary" onClick="checkIn.getFriendLocation(undefined, 'desktop')"><i class="icon-search icon-white"></i> Find</button>
+						<button id="btnFind" class="btn btn-info" onClick="checkIn.getFriendLocation(undefined, 'desktop')"><i class="icon-search icon-white"></i> Find</button>
 						<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Friend list
 							<span class="caret"></span>
 						</button>
 						<ul id="friendList" class="dropdown-menu">
 							<li class="text-error">List empty</li>
-							<li><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
+							<li><a href="#editFriends" role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
 						</ul>
-					</div><br><br>
+					</div>
 				</div>
+				<br><br>
 				<h2>Find group</h2><br>
 				<div class="btn-group">
 					<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="icon-search icon-white"></i> Group list <span class="caret"></span>
