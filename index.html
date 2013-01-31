@@ -162,18 +162,16 @@
 			<div class="modal-form form-inline">
 				<input type="text" class="input-small" placeholder="Group name" id="addGroupName" required>
 				<input type="text" class="input-small" placeholder="Password" id="addGroupKey">
-				<button class="btn btn-info" onClick="listManager.addGroup()"><i class="icon-th-list"></i><i class="icon-plus"></i>Add</button>
+				<button class="btn" onClick="listManager.addGroup()"><i class="icon-th-list"></i><i class="icon-plus"></i>Add</button>
 			</div>
 			<hr>
 			<h4>Add a member to a group</h4>
 			<div class="modal-form form-inline">
-				<select id="addGroupName2" class="selectpicker" data-style="btn-primary">
-					<option>Group</option>
-				</select>
 				<select id="addGroupUser">
-					<option>Friend</option>
 				</select>
-				<button class="btn btn-info" onClick="listManager.addFriendGroup()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
+				<select id="addFriendToGroup" class="selectpicker" data-style="btn-primary">
+				</select>
+				<button class="btn" onClick="listManager.addFriendGroup()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
 			</div>
 		</div>
 		<div class="modal-footer">
