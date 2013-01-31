@@ -11,7 +11,7 @@
 
 	<script type="text/javascript" src="utils/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="bootstrap/js/bootstrap-select.min.js"></script>
+	<script src="bootstrap/js/bootstrap-select.js"></script>
 	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type="text/javascript" src="KadOH.js?debug=true"></script>
 	<script type="text/javascript" src="lib/checkIn.js"></script>
@@ -81,7 +81,7 @@
 		<div class="modal-header">
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3 id="myModalLabel">Log in</h3>
-			<p class="text-info">If you don't have an account, we'll create it for you. Just enter the desired username and password.</p>
+			<p class="text-info">If you don't have an account, we'll create it for you. Just enter the desired user name and password.</p>
 		</div>
 		<form class="modal-form">
 			<div class="modal-body">
@@ -115,7 +115,7 @@
                   </div>
                   <div id="collapseOne" class="accordion-body collapse" style="height: 0px;">
                     <div class="accordion-inner">
-                      <p align="left">If you don't have an account just type any username and password in the log in field, and the system will create for you an account. Else just log in with your credentials and the system will retrieve your information.</p>
+                      <p align="left">If you don't have an account just type any user name and password in the log in field, and the system will create for you an account. Else just log in with your credentials and the system will retrieve your information.</p>
                     </div>
                   </div>
                 </div>
@@ -127,7 +127,7 @@
                   </div>
                   <div id="collapseTwo" class="accordion-body collapse">
                     <div class="accordion-inner">
-                      <p align="left">Geo-kadoh uses encryption to secure location sharing between friends and groups. Therefore, for your friends to be able to find you, you need to provide them your personal public key. You'll find your public key by clicking on <strong>Show my key</strong> button on the top left (of course after loging in) and the key will appear in the <strong>Output</strong> box.<br><br><small class="text-warning">For the moment sharing the key is totally up to you. In the future the system might provide an alternative way to share the key.</small></p>
+                      <p align="left">Geo-KadOH uses encryption to secure location sharing between friends and groups. Therefore, for your friends to be able to find you, you need to provide them your personal public key. You'll find your public key by clicking on <strong>Show my key</strong> button on the top left (of course after logging in) and the key will appear in the <strong>Output</strong> box.<br><br><small class="text-warning">For the moment sharing the key is totally up to you. In the future the system might provide an alternative way to share the key.</small></p>
                     </div>
                   </div>
                 </div>
@@ -143,7 +143,7 @@
                       	<ul align="left">
                       		<li>Add friend:
                       			<ul>
-                      				<li>Enter your friends username and public key and click <strong>Add</strong> button. Now your friend will appear on your list.</li>
+                      				<li>Enter your friends user name and public key and click <strong>Add</strong> button. Now your friend will appear on your list.</li>
                   				</ul>
                       		</li>
 							<li>Remove friend:
@@ -164,7 +164,7 @@
                   </div>
                   <div id="collapseFour" class="accordion-body collapse">
                     <div class="accordion-inner">
-                    	<p align="left">If you wish to share your location only with a group of friends, then you can create a group by clicking on <strong>Groups</strong> button under <strong>Friends and Groups</strong> section. A new window will pop up and you can edt your group setting. The groups are common groups. It means that when you create a group, the friends belongig in that group must have the same group created.</p>
+                    	<p align="left">If you wish to share your location only with a group of friends, then you can create a group by clicking on <strong>Groups</strong> button under <strong>Friends and Groups</strong> section. A new window will pop up and you can edit your group setting. The groups are common groups. It means that when you create a group, the friends belonging in that group must have the same group created.</p>
                     	<ul align="left">
 							<li>Add a new group and members:
 								<ul>
@@ -197,13 +197,13 @@
 									<li>Only your friends who has your public key can retrieve your location.</li>
 								</li>
 								<li>To public:
-									<li>Anyone who know just your username can locate you.</li>
+									<li>Anyone who know just your user name can locate you.</li>
 								</li>
 								<li>To group:
 									<li>After selecting a group you wish to share with. Only the group members with common group can locate you</li>
 								</li>
 							</ul>
-							<p align="left">Your browser may ask you to allow location sharing which is required for this functionality. Succesfully shared location will be announced in the <strong>Output</strong> box and your location will be shown on the map.</p>
+							<p align="left">Your browser may ask you to allow location sharing which is required for this functionality. Successfully shared location will be announced in the <strong>Output</strong> box and your location will be shown on the map.</p>
                     	</div>
                   	</div>
                 </div>
@@ -215,7 +215,7 @@
                   	</div>
                   	<div id="collapseSix" class="accordion-body collapse">
                   		<div class="accordion-inner">
-	                    	<p align="left">Under <strong>Find friends</strong> you can type your friends username to locate his public location. To locate your friend in the friend list, click on <strong>Locate friend</strong> and then your friends name. To locate all the group members, under <strong>Find group</strong> section click on the <strong>Locate Group</strong> button and select the group you want to locate.</p>
+	                    	<p align="left">Under <strong>Find friends</strong> you can type your friends user name to locate his public location. To locate your friend in the friend list, click on <strong>Locate friend</strong> and then your friends name. To locate all the group members, under <strong>Find group</strong> section click on the <strong>Locate Group</strong> button and select the group you want to locate.</p>
 							<p align="left">If the location is found, a map will appear and the coordinates in the <strong>Output</strong> box. When locating groups, you can click on the coordinate to open the map in Google Maps website. If some users location are not found it will be announced also in the <strong>Output</strong> box.</p>
                     	</div>
                   	</div>
@@ -228,7 +228,7 @@
                   	</div>
                   	<div id="collapseSeven" class="accordion-body collapse">
                   		<div class="accordion-inner">
-	                    	<p align="left">This box tells you in what state the website is. It also gives you responses on whether thigs go well or not.</p>
+	                    	<p align="left">This box tells you in what state the website is. It also gives you responses on whether things go well or not.</p>
                     	</div>
                   	</div>
                 </div>
@@ -252,7 +252,7 @@
                   	</div>
                   	<div id="collapseNine" class="accordion-body collapse">
                   		<div class="accordion-inner">
-	                    	<p>If you have some feedback off the webpage, we'll be happy to hear it.<br>Just <a href="mailto:abdalla.taha@eurecom.fr,lorenzo.rande@eurecom.fr">click here</a></p>
+	                    	<p>If you have some feedback of the web page, we'll be happy to hear it.<br>Just <a href="mailto:abdalla.taha@eurecom.fr,lorenzo.rande@eurecom.fr">click here</a></p>
                     	</div>
                   	</div>
                 </div>
@@ -300,17 +300,18 @@
 			<div class="modal-form form-inline">
 				<input type="text" class="input-small" placeholder="Group name" id="addGroupName" required>
 				<input type="text" class="input-small" placeholder="Password" id="addGroupKey">
-				<button class="btn" onClick="listManager.addGroup()"><i class="icon-th-list"></i><i class="icon-plus"></i>Add</button>
+				<button class="btn btn-info" onClick="listManager.addGroup()"><i class="icon-th-list"></i><i class="icon-plus"></i>Add</button>
 			</div>
 			<hr>
 			<h4>Add a member to a group</h4>
-			<div class="modal-form form-inliner row-fluid">
-				<select id="addFriendToGroup_group" class="selectpicker span2" data-style="btn-inverse">
+			<div class="row-fluid">
+				<select id="addFriendToGroup_group" class="selectpicker span3" data-style="btn-inverse">
 				</select>
-				<select id="addFriendToGroup_friend" class="selectpicker span2" data-style="btn-success">
+				<select id="addFriendToGroup_friend" class="selectpicker span3" data-style="btn-success">
 				</select>
-				<button class="btn" onClick="listManager.addFriendGroup()"><i class="icon-user"></i><i class="icon-plus"></i>Add</button>
+				<a class="btn btn-info" onClick="listManager.addFriendGroup()"><i class="icon-user icon-white"></i><i class="icon-plus"></i>Add</a>
 			</div>
+			
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
