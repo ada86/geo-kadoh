@@ -329,7 +329,7 @@
 			<div id="welcomeMobile">
 				<img height="80" width="83"src="bootstrap/img/Geo-KadOH_logo.png">
 				<h1>Welcome to Geo-KadOH<br>
-					<small>The decentralized location sharing Web application</small>
+					<small>The decentralized location sharing Web application.<br><strong>Please log in.</strong></small>
 				</h1>
 			</div>
 			<h4 id="loggedInMobile">
@@ -341,7 +341,7 @@
 		<div class="row-fluid collapse in">
 			<div class="span7 offset1" id="mapholderMobile"></div>
 		</div>
-		<div class="row-fluid">
+		<div id="hideMobile" class="row-fluid hidden-tablet hidden-phone">
 			<!--Share my location-->
 			<div class="span5" id="shareMyLocationMobile">
 				<h2>Share my location</h2>
@@ -399,7 +399,7 @@
 		<div id="welcome">
 			<div class="hero-unit">
 				<h1>Welcome to Geo-KadOH<img height="133" width="135"src="bootstrap/img/Geo-KadOH_logo.png"></h1>
-				<p>The decentralized location sharing Web application</p><br>
+				<p>The decentralized location sharing Web application.<br><strong>Please log in.</strong></p><br>
 				<button class="btn btn-success btn-large" href="#Login" data-toggle="modal">Log in</button>
 				<button class="btn btn-info btn-large" href="#Guide" data-toggle="modal">Guide</button>
 			</div>
@@ -408,7 +408,7 @@
 		<div class="row-fluid collapse in">
 			<div id="mapholder" class="span10 offset1"></div>
 		</div>
-		<div class="row-fluid">
+		<div class="row-fluid hidden-desktop" id="hideDesktop">
 		<!--Share my location and edit lists-->
 			<div class="span4" id="shareMyLocation">
 				<h2>Share my location</h2>
