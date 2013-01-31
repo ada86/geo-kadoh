@@ -75,7 +75,12 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
-#map_canvas img,
+#mapholder img,
+.google-maps img {
+  max-width: none;
+}
+
+#mapholderMobile img,
 .google-maps img {
   max-width: none;
 }
