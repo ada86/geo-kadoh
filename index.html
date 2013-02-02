@@ -5,13 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
-	<!--<link href="bootstrap/css/bootstrap-select.min.css" rel="stylesheet">-->
 	<link rel="shortcut icon" href="favicon.ico" >
 	<title>Geo-KadOH</title>
 
 	<script type="text/javascript" src="utils/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<!--<script src="bootstrap/js/bootstrap-select.js"></script>-->
 	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type="text/javascript" src="KadOH.js?debug=true"></script>
 	<script type="text/javascript" src="lib/checkIn.js"></script>
@@ -25,7 +23,6 @@
 	<script type="text/javascript" src="lib/htmlEvents.js"></script>
 	<script type="text/javascript" src="lib/kadohInit.js"></script>
 	<script type="text/javascript">
-		//$('.select').selectpicker();
 		var text = "Please login :)";
 		function log(txt){
 			text = txt+"<br>".concat(text);
@@ -295,12 +292,10 @@
 				<input type="text" class="input-medium" placeholder="Group name" id="addGroupName" required>
 				<input type="password" class="input-medium" placeholder="Password" id="addGroupKey">
 				<button class="btn btn-info" onClick="listManager.addGroup()"><i class="icon-th-list icon-white"></i><i class="icon-plus icon-white"></i>Add</button>
-			</div>
 			<h4>Add a member to a group</h4>
-			<div class="row-fluid">
-				<select id="addFriendToGroup_group" class="selectpicker span4 dropup" data-style="btn-inverse">
+				<select id="addFriendToGroup_group" class="span4 dropup">
 				</select>
-				<select id="addFriendToGroup_friend" class="selectpicker span4 dropup" data-style="btn-success">
+				<select id="addFriendToGroup_friend" class="span4 dropup">
 				</select>
 				<a class="btn btn-info" onClick="listManager.addFriendGroup()"><i class="icon-user icon-white"></i><i class="icon-plus icon-white"></i>Add</a>
 			</div>
