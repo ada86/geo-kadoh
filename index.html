@@ -285,8 +285,10 @@
 		<div class="modal-header"> 
 			<div class="tabbable">
 				<ul id="groupEditList" class="nav nav-pills"></ul>
-				<div id="groupEditContentList" class="tab-content"></div>
+				<div id="groupEditContentList" class="tab-content" style="max-height: 150px;overflow-y: scroll;"></div>
 			</div>
+		</div>
+		<div class="modal-body">
 			<h4>Add a new group</h4>
 			<input type="text" class="input-medium" placeholder="Group name" id="addGroupName" required>
 			<input type="password" class="input-medium" placeholder="Password" id="addGroupKey">
@@ -297,6 +299,7 @@
 			<select id="addFriendToGroup_friend" class="span4 dropup">
 			</select>
 			<a class="btn btn-info" onClick="listManager.addFriendGroup()"><i class="icon-user icon-white"></i><i class="icon-plus icon-white"></i>Add</a>
+		</div>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
