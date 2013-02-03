@@ -282,24 +282,21 @@
 			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			<h3 id="myModalLabel4">Edit Group list</h3>
 		</div>
-		<div class="modal-header tabbable">
-			<ul id="groupEditList" class="nav nav-pills"></ul>
-			<div id="groupEditContentList" class="tab-content" style="max-height: 180px;overflow-y: scroll;"></div>
-		</div>
-		<div class="modal-body">
-			<h4>Add a new group</h4>
-			<div class="modal-form form-inline">
-				<input type="text" class="input-medium" placeholder="Group name" id="addGroupName" required>
-				<input type="password" class="input-medium" placeholder="Password" id="addGroupKey">
-				<button class="btn btn-info" onClick="listManager.addGroup()"><i class="icon-th-list icon-white"></i><i class="icon-plus icon-white"></i>Add</button>
-			<h4>Add a member to a group</h4>
-				<select id="addFriendToGroup_group" class="span4 dropup">
-				</select>
-				<select id="addFriendToGroup_friend" class="span4 dropup">
-				</select>
-				<a class="btn btn-info" onClick="listManager.addFriendGroup()"><i class="icon-user icon-white"></i><i class="icon-plus icon-white"></i>Add</a>
+		<div class="modal-header"> 
+			<div class="tabbable">
+				<ul id="groupEditList" class="nav nav-pills"></ul>
+				<div id="groupEditContentList" class="tab-content" style="max-height: 150px;overflow-y: scroll;"></div>
 			</div>
-			
+			<h4>Add a new group</h4>
+			<input type="text" class="input-medium" placeholder="Group name" id="addGroupName" required>
+			<input type="password" class="input-medium" placeholder="Password" id="addGroupKey">
+			<button class="btn btn-info" onClick="listManager.addGroup()"><i class="icon-th-list icon-white"></i><i class="icon-plus icon-white"></i>Add</button>
+			<h4>Add a member to a group</h4>
+			<select id="addFriendToGroup_group" class="span4 dropup">
+			</select>
+			<select id="addFriendToGroup_friend" class="span4 dropup">
+			</select>
+			<a class="btn btn-info" onClick="listManager.addFriendGroup()"><i class="icon-user icon-white"></i><i class="icon-plus icon-white"></i>Add</a>
 		</div>
 		<div class="modal-footer">
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
