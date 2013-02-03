@@ -870,11 +870,14 @@
   }
   .modal {
     position: fixed;
-    top: 20px;
-    right: 20px;
-    left: 20px;
+    top: 3%;
+    right: 3%;
+    left: 3%;
     width: auto;
     margin: 0;
+  }
+  .modal-body { 
+    height: 60%; 
   }
   .modal.fade {
     top: -100px;
@@ -923,9 +926,15 @@
     margin-left: 0;
   }
   .modal {
-    top: 10px;
-    right: 10px;
-    left: 10px;
+    position: fixed;
+    top: 3%;
+    right: 3%;
+    left: 3%;
+    width: auto;
+    margin: 0;
+  }
+  .modal-body { 
+    height: 60%;
   }
   .modal-header .close {
     padding: 10px;
