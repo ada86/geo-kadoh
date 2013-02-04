@@ -284,21 +284,19 @@
 		</div>
 		<div class="modal-header"> 
 			<div class="tabbable">
-				<ul id="groupEditList" class="nav nav-pills" style="max-height: 50px;overflow-y: scroll;"></ul>
+				<ul id="groupEditList" class="nav nav-pills"></ul>
 				<div id="groupEditContentList" class="tab-content" style="max-height: 150px;overflow-y: scroll;"></div>
 			</div>
 		</div>
 		<div class="modal-body" style="max-height: 200px;overflow-y: scroll;">
-			<h4>Add a new group</h4>
+			<h5>Add a new group</h5>
 			<input type="text" class="input-small" placeholder="Group name" id="addGroupName" required>
 			<input type="password" class="input-small" placeholder="Password" id="addGroupKey">
-			<button class="btn btn-info" onClick="listManager.addGroup()"><i class="icon-th-list icon-white"></i><i class="icon-plus icon-white"></i>Add</button>
-			<h4>Add a member to a group</h4>
-			<select id="addFriendToGroup_group" class="dropup">
-			</select>
-			<select id="addFriendToGroup_friend" class="dropup">
-			</select>
-			<a class="btn btn-info" onClick="listManager.addFriendGroup()"><i class="icon-user icon-white"></i><i class="icon-plus icon-white"></i>Add</a>
+			<button class="btn btn-info" onClick="listManager.addGroup()"><i class="icon-th-list icon-white"></i><i class="icon-plus icon-white"></i> Add</button>
+			<h5>Add a member to a group</h5>
+			<select id="addFriendToGroup_group" class="dropup"></select>
+			<select id="addFriendToGroup_friend" class="dropup"></select>
+			<button class="btn btn-info" onClick="listManager.addFriendGroup()"><i class="icon-user icon-white"></i><i class="icon-plus icon-white"></i> Add</button>
 		</div>
 	</div>
 	
