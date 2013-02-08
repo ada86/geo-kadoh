@@ -8,6 +8,9 @@
 	<link rel="shortcut icon" href="favicon.ico" >
 	<title>Geo-KadOH</title>
 
+	<script type="text/javascript">
+		var log = function(str){console.log(str);};
+	</script>
 	<script type="text/javascript" src="utils/jquery.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
@@ -24,7 +27,7 @@
 	<script type="text/javascript" src="lib/kadohInit.js"></script>
 	<script type="text/javascript">
 		var text = "";
-		function log(txt){
+		log = function(txt){
 			text = txt+"<br>".concat(text);
 			document.getElementById("output").innerHTML=text;
 			document.getElementById("outputMobile").innerHTML=text;
