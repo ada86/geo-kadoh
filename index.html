@@ -314,9 +314,9 @@
 		<div class="page-header">
 			<div id="welcomeMobile">
 				<img height="80" width="83"src="bootstrap/img/Geo-KadOH_logo.png">
-				<h1>Welcome to Geo-KadOH<br>
+				<h2>Welcome to Geo-KadOH<br>
 					<small>The decentralized location sharing Web application.</small>
-				</h1>
+				</h2>
 			</div>
 			<h4 id="loggedInMobile">
 				<button class="btn btn-success" href="#Login" data-toggle="modal">Log in</button>
@@ -330,7 +330,7 @@
 		<div id="hideMobile" class="row-fluid hidden-tablet hidden-phone">
 			<!--Share my location-->
 			<div class="span5" id="shareMyLocationMobile">
-				<h2>Share my location</h2>
+				<h3>Share my location</h3>
 				<br>
 				<button class="btn btn-success" onClick="checkIn.putMyLocation(true)"><i class="icon-ok-circle icon-white"></i> To friends</button>
 				<button class="btn btn-primary" onClick="checkIn.putMyLocation(false)"><i class="icon-globe icon-white"></i> To public</button>
@@ -339,15 +339,15 @@
 					<li class="text-error">List empty</li>
 				</ul>
 				<br>
-				<h2>Friends and groups</h2>
+				<h3>Friends and groups</h3>
 				<br>
 				<button class="btn btn-success" href="#editFriends" data-toggle="modal"><i class="icon-ok-circle icon-white"></i> Friends</button>
 				<button class="btn btn-inverse" href="#editGroups" data-toggle="modal"><i class="icon-globe icon-white"></i> Groups</button>
-				<br><br><br>
+				<br>
 			</div>
 			<!--Find Friends and Group-->
 			<div class"span5">
-				<h2>Find friends</h2><br>
+				<h3>Find friends</h3><br>
 				<div class="form-search">
 					<input id="findMobile" class="input-medium" type="text" placeholder="Username" onkeydown="if (event.keyCode == 13) checkIn.getFriendLocation(undefined, 'mobile')">
 					<button id="btnFindMobile" class="btn btn-info" onClick="checkIn.getFriendLocation(undefined, 'mobile')"><i class="icon-search icon-white"></i> Find</button>
@@ -357,7 +357,7 @@
 					<li class="text-error">List empty</li>
 					<li><a href="#editFriends"role="button" data-toggle="modal"><i class="icon-pencil"></i> Edit</a></li>
 				</ul><br>
-				<h2>Find group</h2><br>
+				<h3>Find group</h3><br>
 				<button class="btn btn-primary" data-toggle="collapse" data-target="#groupListMobile"><i class"icon-search icon-white"></i> Find Group</button>
 				<ul id="groupListMobile" class="nav nav-pills nav-stacked collapse">
 					<li class="text-error">List empty</li>
@@ -367,7 +367,7 @@
 			</div>
 			<!--Output-->
 			<div class="span5">
-				<h2>Output</h2>
+				<h3>Output</h3>
 				<br>
 				<pre id="outputMobile" class="pre pre-scrollable" style="height: 6pc;">Trying to connect to the DHT</pre><br>
 			</div>
