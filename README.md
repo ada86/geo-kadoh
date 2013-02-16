@@ -4,6 +4,7 @@ Web application using [KadOH](https://github.com/jinroh/kadoh) to provide locati
 This application is currently used as a replacement for [KadOH's boilerplate jake app](https://github.com/jinroh/kadoh/tree/master/apps/boilerplate/static) .
 
 [Prezi presentation](http://prezi.com/cnvytqs2azhn/geo-kadoh/?kw=view-cnvytqs2azhn&rc=ref-30232747)
+
 index.html
 
 bootstrap	: to make it nice and shiny
