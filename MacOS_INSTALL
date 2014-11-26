@@ -1,0 +1,32 @@
+Guide for running Geo-KadOH in Mac OS X
+
+1# download and install node 0.8.6 (NOTE kadoh installation does not work with the newest node version)
+http://nodejs.org/dist/v0.8.6/node-v0.8.6.pkg
+2# download and install git
+http://git-scm.com/download/mac
+
+3# On terminal, navigate to the folder you want to install Geo-KadOH, and run following commands
+$ git clone https://github.com/jinroh/kadoh.git
+$ cd kadoh
+$ npm install
+##########
+If you have the error of "SSL Error: SELF_SIGNED_CERT_IN_CHAIN" then run
+$ sudo npm install npm -g --ca=null
+and provide password. Then run the install again
+$ npm install
+##########
+$ sudo npm install -g jake
+$ jake build
+$ cd apps/boilerplate/
+$ git clone https://github.com/ada86/geo-kadoh.git
+$ rm -rf static/
+$ mv geo-kadoh/ static
+
+Now Geo-KadOH should be installed and you can test it by opening two seperate terminal windows and run in one of them
+$ bin/dht udp.default
+and in the other one
+$ jake run:boilerplate
+
+then on your browser (prefer Chrome) and go to localhost:8080
+
+Enjoy!
